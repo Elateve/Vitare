@@ -49,22 +49,22 @@
     </div>
   </div>
   <p>The tagline anchors VITARE's core diagnostic narrative across all touchpoints:</p>
-  <div style="background: var(--dark); padding: 40px; text-align: center; margin: 24px 0;">
-    <div class="serif" style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Primary Tagline</div>
-    <div class="serif" style="font-size: 36px; font-style: italic; color: var(--white);">"Know Your Biology. Design Your Life."</div>
+  <div class="tagline-box">
+    <div class="tagline-box-label">Primary Tagline</div>
+    <div class="tagline-box-text">"Know Your Biology. Design Your Life."</div>
   </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px;">
-    <div style="background: var(--dark); padding: 24px; text-align: center;">
-      <div style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 8px;">SECONDARY</div>
-      <div class="serif" style="font-style: italic; color: var(--light-text);">"Find the Roots of Your Wellness"</div>
+  <div class="inline-grid-3" style="margin-top: 16px;">
+    <div class="tagline-card">
+      <div class="tagline-card-label">SECONDARY</div>
+      <div class="tagline-card-text">"Find the Roots of Your Wellness"</div>
     </div>
-    <div style="background: var(--dark); padding: 24px; text-align: center;">
-      <div style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 8px;">MEMBERSHIP HOOK</div>
-      <div class="serif" style="font-style: italic; color: var(--light-text);">"Your Blood Tells a Story. Come Listen."</div>
+    <div class="tagline-card">
+      <div class="tagline-card-label">MEMBERSHIP HOOK</div>
+      <div class="tagline-card-text">"Your Blood Tells a Story. Come Listen."</div>
     </div>
-    <div style="background: var(--dark); padding: 24px; text-align: center;">
-      <div style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 8px;">CAMPAIGN LINE</div>
-      <div class="serif" style="font-style: italic; color: var(--light-text);">"Biohack Smarter. Not Harder."</div>
+    <div class="tagline-card">
+      <div class="tagline-card-label">CAMPAIGN LINE</div>
+      <div class="tagline-card-text">"Biohack Smarter. Not Harder."</div>
     </div>
   </div>
 </div>
@@ -135,7 +135,7 @@
     <div class="divider divider-gold"></div>
     <h3>What We Test — <em>The Full Diagnostic Menu</em></h3>
     <p>The "free blood test" draws people in. The results keep them. Here is every test in VITARE's diagnostic arsenal, from complimentary entry-level scans to full longevity panels:</p>
-    <div style="margin: 16px 0 8px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">Complimentary (Always Free)</div>
+    <div class="test-category-label">Complimentary (Always Free)</div>
     <div class="tests-grid">
       <div class="test-item">
         <div class="test-title">VITARE Skin Analysis Scan</div>
@@ -150,7 +150,7 @@
         <div class="test-desc">Resting heart rate, blood pressure, heart rate variability — the simplest window into cardiovascular and nervous system health.</div>
       </div>
     </div>
-    <div style="margin: 24px 0 8px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">Standard Blood Panel — €149 (Free with Membership)</div>
+    <div class="test-category-label">Standard Blood Panel — €149 (Free with Membership)</div>
     <div class="tests-grid">
       <div class="test-item">
         <div class="test-title">Full Hormonal Profile</div>
@@ -177,7 +177,7 @@
         <div class="test-desc">Vitamin D3, B12, ferritin, magnesium, zinc, folate, omega-3 index. The most commonly missed root causes of fatigue, brain fog, and poor sleep.</div>
       </div>
     </div>
-    <div style="margin: 24px 0 8px; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);">Advanced Longevity Panel — €349 (Available as Add-On)</div>
+    <div class="test-category-label">Advanced Longevity Panel — €349 (Available as Add-On)</div>
     <div class="tests-grid">
       <div class="test-item">
         <div class="test-title">Epigenetic Biological Age</div>
@@ -263,18 +263,20 @@
       <div class="price serif">€10</div>
     </div>
   </div>
-  <div style="background: var(--dark); padding: 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 32px;">
-    <div>
-      <div style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px;">The Lounge</div>
-      <p style="font-size: 13px; margin: 0;">Micro-cement bar top. Travertine stone shelving. Warm pendant lighting. Magazine-quality aesthetic that makes members feel like they're inside an editorial shoot, not a gym café. Seating for 22.</p>
-    </div>
-    <div>
-      <div style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px;">The Ritual Wall</div>
-      <p style="font-size: 13px; margin: 0;">A curated D2C retail wall featuring VITARE-approved supplements, devices (Oura Ring, WHOOP), skincare, and lab kits. Average transaction: €65. Margin: 35–50%. Revenue stream 5.</p>
-    </div>
-    <div>
-      <div style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px;">Events</div>
-      <p style="font-size: 13px; margin: 0;">Monthly longevity dinners, morning run clubs, breathwork sessions, and expert speaker events exclusively for VITARE members. Events drive word-of-mouth acquisition and deepen community bonds.</p>
+  <div class="content-block" style="margin-top: 32px;">
+    <div class="inline-grid-3">
+      <div>
+        <div class="content-block-label">The Lounge</div>
+        <p>Micro-cement bar top. Travertine stone shelving. Warm pendant lighting. Magazine-quality aesthetic that makes members feel like they're inside an editorial shoot, not a gym café. Seating for 22.</p>
+      </div>
+      <div>
+        <div class="content-block-label">The Ritual Wall</div>
+        <p>A curated D2C retail wall featuring VITARE-approved supplements, devices (Oura Ring, WHOOP), skincare, and lab kits. Average transaction: €65. Margin: 35–50%. Revenue stream 5.</p>
+      </div>
+      <div>
+        <div class="content-block-label">Events</div>
+        <p>Monthly longevity dinners, morning run clubs, breathwork sessions, and expert speaker events exclusively for VITARE members. Events drive word-of-mouth acquisition and deepen community bonds.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -334,16 +336,16 @@
         </ul>
       </div>
     </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;">
-      <div style="background: var(--dark); padding: 32px;">
-        <div style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 12px; text-transform: uppercase;">Drop-In Access</div>
-        <h3 class="serif" style="font-size: 26px; margin-bottom: 8px;">The Day Pass</h3>
-        <p style="font-size: 13px;">€55/day or €220/week. Cold plunge, sauna, and lounge access. Designed for hotel guests, digital nomads, and curious locals. The gateway drug to membership.</p>
+    <div class="inline-grid-2" style="margin-top: 32px;">
+      <div class="tier-addon">
+        <div class="tier-addon-label">Drop-In Access</div>
+        <h3 class="serif">The Day Pass</h3>
+        <p>€55/day or €220/week. Cold plunge, sauna, and lounge access. Designed for hotel guests, digital nomads, and curious locals. The gateway drug to membership.</p>
       </div>
-      <div style="background: var(--dark); padding: 32px;">
-        <div style="font-size: 11px; color: var(--gold); letter-spacing: 0.2em; margin-bottom: 12px; text-transform: uppercase;">Corporate Packages</div>
-        <h3 class="serif" style="font-size: 26px; margin-bottom: 8px;">22@ Executive Health</h3>
-        <p style="font-size: 13px;">Minimum 5-person corporate packages for 22@ district tech companies. €280/head/month. Branded quarterly health reports. The B2B revenue stream that stabilises MRR in year 1.</p>
+      <div class="tier-addon">
+        <div class="tier-addon-label">Corporate Packages</div>
+        <h3 class="serif">22@ Executive Health</h3>
+        <p>Minimum 5-person corporate packages for 22@ district tech companies. €280/head/month. Branded quarterly health reports. The B2B revenue stream that stabilises MRR in year 1.</p>
       </div>
     </div>
   </div>
