@@ -3,67 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Investment — VITARE</title>
+<title>The Investment -- ROOTS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 40px; }
-  .summary-card { background: var(--dark); padding: 28px 20px; text-align: center; }
-  .summary-card.hl { background: var(--charcoal); border-top: 2px solid var(--gold); }
-  .summary-card .sc-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-  .summary-card .sc-value { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; line-height: 1; }
-  .summary-card .sc-value.gold { color: var(--gold); }
-  .summary-card .sc-value.green { color: #7A9B7F; }
-  .summary-card .sc-sub { font-size: 11px; color: var(--muted); margin-top: 6px; }
-  .fin-table { width: 100%; border-collapse: collapse; }
-  .fin-table thead tr { border-bottom: 1px solid #8B6F3A; }
-  .fin-table thead th { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 10px 14px; text-align: left; }
-  .fin-table thead th.r { text-align: right; }
-  .fin-table thead th.c { text-align: center; }
-  .fin-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.04); }
-  .fin-table tbody tr:hover { background: rgba(201,169,110,0.03); }
-  .fin-table tbody td { padding: 13px 14px; color: var(--light-text); font-size: 13px; vertical-align: top; }
-  .fin-table tbody td.r { text-align: right; }
-  .fin-table tbody td.c { text-align: center; }
-  .fin-table tbody td.mono { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--white); }
-  .fin-table tbody td.mono.r { text-align: right; }
-  .fin-table tbody td.gold { color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 16px; }
-  .fin-table tbody td.gold.r { text-align: right; }
-  .fin-table tbody td.green { color: #7A9B7F; font-family: 'Cormorant Garamond', serif; font-size: 16px; }
-  .fin-table tbody td.green.r { text-align: right; }
-  .fin-table tbody td.red { color: #B06060; font-family: 'Cormorant Garamond', serif; font-size: 16px; }
-  .fin-table tbody td.red.r { text-align: right; }
-  .fin-table tbody td strong { color: var(--white); font-weight: 500; }
-  .fin-table tbody td small { font-size: 11px; color: var(--muted); display: block; margin-top: 2px; }
-  .fin-table tr.subheader td { background: rgba(201,169,110,0.06); font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); padding: 8px 14px; }
-  .fin-table tr.tot td { background: rgba(255,255,255,0.03); font-weight: 500; color: var(--white); border-top: 1px solid var(--mid); border-bottom: 1px solid var(--mid); padding: 14px; }
-  .fin-table tr.tot td.mono { font-size: 18px; }
-  .fin-table tr.tot td.green { color: #7A9B7F; font-size: 20px; }
-  .fin-table tr.tot td.red { color: #B06060; font-size: 18px; }
-  .fin-table tr.hl td { background: rgba(201,169,110,0.07); }
-  .fin-label { margin-bottom: 8px; font-size: 11px; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; margin-top: 40px; }
-  .fin-divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--mid), transparent); margin: 60px 0; }
-  .mix-box { margin-top: 20px; padding: 20px 24px; background: var(--dark); border-left: 2px solid var(--gold); }
-  .mix-label { font-size: 11px; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px; }
-  .mix-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; font-size: 13px; color: var(--light-text); }
-  .bottomline-box { margin-top: 40px; background: var(--charcoal); border: 1px solid #8B6F3A; padding: 48px; text-align: center; }
-  .bl-label { font-size: 11px; color: var(--gold); letter-spacing: 0.35em; text-transform: uppercase; margin-bottom: 24px; }
-  .bl-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
-  .bl-sub { font-size: 12px; color: var(--muted); }
-  .bl-big { font-family: 'Cormorant Garamond', serif; font-size: 56px; line-height: 1; }
-  .notes-box { margin-top: 16px; padding: 16px 24px; background: var(--dark); font-size: 11px; color: var(--muted); line-height: 1.8; }
-  @media (max-width: 700px) {
-    .summary-grid { grid-template-columns: 1fr 1fr; }
-    .mix-grid { grid-template-columns: 1fr 1fr; }
-    .bl-grid { grid-template-columns: 1fr; gap: 24px; }
-    .bl-big { font-size: 40px; }
-  }
-</style>
 </head>
 <body>
 <nav class="nav">
-  <a href="index.html" class="nav-logo serif">VITARE</a>
+  <a href="index.html" class="nav-logo">ROOTS</a>
   <button class="nav-toggle" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -73,7 +21,6 @@
     <a href="opportunity.html">Opportunity</a>
     <a href="hotel.html">Hotels</a>
     <a href="investment.html" class="active">Investment</a>
-    <a href="neko.html">Neko</a>
     <a href="marketing.html">Marketing</a>
   </div>
 </nav>
@@ -81,81 +28,167 @@
 <div class="page-top"></div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 1: MEMBERSHIP TIERS               -->
+<!-- SECTION 1: ENTITY STRUCTURE & ROLES        -->
 <!-- ═══════════════════════════════════════════ -->
 <div class="section">
-  <div class="eyebrow">Section 1 — Membership Pricing</div>
-  <h2>Membership <em>Tiers</em></h2>
-  <p class="lead">Monthly fees on a 12-month commitment. All tiers include a free standard blood panel (€149 value).</p>
+  <div class="eyebrow">Section 1 -- Ownership &amp; Entity Structure</div>
+  <h2>How It <em>Works</em></h2>
+  <p class="lead">The investor is buying a managed asset, not a job. Elateve runs everything. The investor owns the entity, holds the contract with the property, and receives 85% of all profit.</p>
 
+  <div class="entity-grid">
+    <div class="entity-card">
+      <h4>Project Entity (NewCo)</h4>
+      <p>100% owned by the Investor. This is the local operating company that signs the agreement with the Hotel or Property Owner. The investor holds full equity.</p>
+    </div>
+    <div class="entity-card">
+      <h4>Management &amp; IP</h4>
+      <p>100% owned by Elateve. Elateve owns the ROOTS brand, the "4 Pillars" methodology, the software/app, and operating manuals. Elateve grants a limited license to the Project Entity.</p>
+    </div>
+    <div class="entity-card">
+      <h4>The Agreement</h4>
+      <p>A Management Services Agreement (MSA) between the Investor's Entity and Elateve. This governs operations, fees, IP usage, and performance benchmarks.</p>
+    </div>
+  </div>
+
+  <h3>Roles &amp; <em>Responsibilities</em></h3>
   <div class="table-scroll">
-    <table class="fin-table">
+    <table class="roles-table">
       <thead>
-        <tr>
-          <th>Tier</th>
-          <th>Name</th>
-          <th class="r">Monthly Fee</th>
-          <th class="r">Annual Value</th>
-          <th>What's Included</th>
-        </tr>
+        <tr><th>Party</th><th>Responsibility</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Entry</strong></td>
-          <td><strong>The Seeker</strong></td>
-          <td class="gold r">€350</td>
-          <td class="mono r">€4,200</td>
-          <td>Free standard blood panel · Unlimited cold plunge + sauna · Bar discount 15% · App + community access · Monthly skin scan</td>
-        </tr>
-        <tr class="hl">
-          <td><strong>Mid</strong> <span style="display:inline-block;padding:3px 10px;font-size:11px;background:rgba(201,169,110,0.12);color:var(--gold);border-radius:2px;">Most Popular</span></td>
-          <td><strong>The Vitalist</strong></td>
-          <td class="gold r">€550</td>
-          <td class="mono r">€6,600</td>
-          <td>Everything in Seeker + 1× monthly IV drip (choice) · 4× red light therapy/month · Quarterly advanced biomarker panel · Priority booking · Bar discount 25%</td>
+          <td><strong>Investor</strong></td>
+          <td>100% of CAPEX + 6-12 months working capital. Holds primary contract with physical site (hotel or landlord). Owns the local entity. Receives 85% of EBITDA.</td>
         </tr>
         <tr>
-          <td><strong>Premium</strong></td>
-          <td><strong>The Architect</strong></td>
-          <td class="gold r">€850</td>
-          <td class="mono r">€10,200</td>
-          <td>Everything in Vitalist + 2× monthly IV drips · Annual epigenetic age test · Quarterly 1-on-1 with Medical Director · Annual VO2 max test · Personalised supplement protocol · 4 guest passes/month</td>
-        </tr>
-        <tr>
-          <td><strong>Drop-In</strong></td>
-          <td>Day Pass</td>
-          <td class="gold r">€65</td>
-          <td class="mono r">—</td>
-          <td>Cold plunge + sauna access · Lounge access · Bar access. No commitment.</td>
-        </tr>
-        <tr>
-          <td><strong>Corporate</strong></td>
-          <td>22@ Executive</td>
-          <td class="gold r">€380</td>
-          <td class="mono r">€4,560</td>
-          <td>Per head, minimum 5 people. Standard Seeker benefits + quarterly team health report.</td>
+          <td><strong>Elateve</strong></td>
+          <td>Concept &amp; Strategy, Project Management (launch + procurement), Operations (hiring, training, managing day-to-day), Sales &amp; Marketing, IP &amp; Brand licensing. Receives base fee + marketing contribution + 15% success fee on EBITDA.</td>
         </tr>
       </tbody>
     </table>
   </div>
+</div>
 
-  <div class="mix-box">
-    <div class="mix-label">Membership Mix Assumption — Year 1 (120 Members)</div>
-    <div class="mix-grid">
-      <div>The Seeker<br><span class="serif" style="font-size:22px; color:var(--white)">60</span> members<br>@ €350 = €21,000/mo</div>
-      <div>The Vitalist<br><span class="serif" style="font-size:22px; color:var(--white)">45</span> members<br>@ €550 = €24,750/mo</div>
-      <div>The Architect<br><span class="serif" style="font-size:22px; color:var(--white)">15</span> members<br>@ €850 = €12,750/mo</div>
-      <div>Total MRR<br><span class="serif" style="font-size:22px; color:var(--gold)">€58,500</span>/mo<br>€702,000/yr</div>
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 2: FEE STRUCTURE / WATERFALL       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section-alt full-bleed">
+  <div class="section-alt-inner">
+    <div class="eyebrow">Section 2 -- The Fee Structure</div>
+    <h2>The Waterfall -- <em>How EUR 1 Flows</em></h2>
+    <p class="lead">Complete transparency on how revenue moves through the business. The investor's entity collects all gross revenue. Costs are deducted in order. Elateve's success fee is only paid on profit -- fully performance-aligned.</p>
+
+    <div class="waterfall">
+      <div class="waterfall-step highlight">
+        <div class="waterfall-num">1</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">Gross Revenue<small>Collected by the Investor's Entity</small></div>
+          <div class="waterfall-value neutral">100%</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step">
+        <div class="waterfall-num">2</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">Hotel Split<small>Paid to hotel -- hotel model only (30%)</small></div>
+          <div class="waterfall-value negative">- 30%</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step">
+        <div class="waterfall-num">3</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">Direct Costs (COGS)<small>Medical supplies, consumables (7-8%)</small></div>
+          <div class="waterfall-value negative">- COGS</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step">
+        <div class="waterfall-num">4</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">Staff Payroll + Local OPEX<small>Paid by the entity -- rent, staff, tech, insurance</small></div>
+          <div class="waterfall-value negative">- OPEX</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step">
+        <div class="waterfall-num">5</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">Elateve Base Fee<small>EUR 8,500/month (EUR 102,000/year)</small></div>
+          <div class="waterfall-value negative">- EUR 8,500/mo</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step">
+        <div class="waterfall-num">6</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">Elateve Marketing Contribution<small>2% of monthly gross revenue</small></div>
+          <div class="waterfall-value negative">- 2%</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step highlight">
+        <div class="waterfall-num">7</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">= EBITDA (Net Profit)<small>Before Elateve success fee</small></div>
+          <div class="waterfall-value result">= EBITDA</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step">
+        <div class="waterfall-num">8</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">Elateve Success Fee<small>15% of EBITDA -- performance-aligned</small></div>
+          <div class="waterfall-value negative">- 15%</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step highlight">
+        <div class="waterfall-num">9</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">= Investor Net Profit<small>85% of EBITDA flows to the investor</small></div>
+          <div class="waterfall-value result">= 85% of EBITDA</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 2: SERVICE PRICING + MARGINS       -->
+<!-- SECTION 3: IP & SCALABILITY                -->
 <!-- ═══════════════════════════════════════════ -->
 <div class="section">
-  <div class="eyebrow">Section 2 — Service Pricing</div>
-  <h2>Service Menu — <em>Cost, Price &amp; Margin</em></h2>
+  <div class="eyebrow">Section 3 -- IP &amp; Scalability</div>
+  <h2>Intellectual Property <em>&amp; Growth Rights</em></h2>
+  <p class="lead">Elateve retains the brand and methodology. The investor gets a protected, managed location with right of first refusal on expansion.</p>
+
+  <div class="clause-grid">
+    <div class="clause-card">
+      <h4>Brand &amp; Methodology</h4>
+      <p>Elateve retains 100% of ROOTS brand trademarks, the "4 Pillars" methodology, proprietary software/app, and the complete operating manual. These are licensed to the investor's entity under the MSA.</p>
+    </div>
+    <div class="clause-card">
+      <h4>Franchise Rights</h4>
+      <p>Elateve reserves the exclusive right to franchise or license the ROOTS concept globally. The investor's rights are limited to the funded location(s) under their entity.</p>
+    </div>
+    <div class="clause-card">
+      <h4>Right of First Refusal</h4>
+      <p>The investor has RIGHT OF FIRST REFUSAL on any new ROOTS centres -- both within Barcelona and in other cities. This protects the investor's territory and gives them first opportunity to scale.</p>
+    </div>
+    <div class="clause-card">
+      <h4>Management Agreement Terms</h4>
+      <p>Term: 5-10 years. Exclusivity: Investor gets Right of First Refusal for any ROOTS centres within Barcelona or other cities. Termination: Standard "for cause" clauses if Elateve fails performance benchmarks.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 4: SERVICE PRICING + MARGINS       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="eyebrow">Section 4 -- Service Pricing</div>
+  <h2>Service Menu -- <em>Cost, Price &amp; Margin</em></h2>
   <p class="lead">Our cost to deliver each service vs. what we charge. Margins are calculated per session.</p>
 
   <div class="fin-label" style="margin-top:16px;">IV Drip Lounge</div>
@@ -167,47 +200,47 @@
       <tbody>
         <tr>
           <td><strong>Hydration Boost</strong><small>Saline 1L + electrolytes + B-complex</small></td>
-          <td class="c">30 min</td><td class="red r">€18</td><td class="gold r">€95</td><td class="green r">80.9%</td>
+          <td class="c">30 min</td><td class="red r">EUR 18</td><td class="gold r">EUR 95</td><td class="green r">80.9%</td>
           <td>Entry-level IV. Gateway for new clients.</td>
         </tr>
         <tr>
           <td><strong>Myers Cocktail</strong><small>Vit C, B-complex, magnesium, calcium, zinc</small></td>
-          <td class="c">45 min</td><td class="red r">€28</td><td class="gold r">€165</td><td class="green r">83.0%</td>
+          <td class="c">45 min</td><td class="red r">EUR 28</td><td class="gold r">EUR 165</td><td class="green r">83.0%</td>
           <td>Most popular general wellness drip.</td>
         </tr>
         <tr>
           <td><strong>Immunity Shield</strong><small>High-dose Vit C 10g + zinc + glutathione</small></td>
-          <td class="c">45 min</td><td class="red r">€32</td><td class="gold r">€185</td><td class="green r">82.7%</td>
+          <td class="c">45 min</td><td class="red r">EUR 32</td><td class="gold r">EUR 185</td><td class="green r">82.7%</td>
           <td>High demand in winter months.</td>
         </tr>
         <tr>
           <td><strong>Glow Drip</strong><small>Glutathione 1200mg + Vit C 2g + biotin + B-complex</small></td>
-          <td class="c">50 min</td><td class="red r">€38</td><td class="gold r">€220</td><td class="green r">82.7%</td>
+          <td class="c">50 min</td><td class="red r">EUR 38</td><td class="gold r">EUR 220</td><td class="green r">82.7%</td>
           <td>Top seller with female demographic.</td>
         </tr>
         <tr>
           <td><strong>Anti-Aging Protocol</strong><small>Glutathione 2g + Vit C + amino acids + biotin</small></td>
-          <td class="c">60 min</td><td class="red r">€48</td><td class="gold r">€280</td><td class="green r">82.9%</td>
-          <td>Recommended 1×/month in member protocol.</td>
+          <td class="c">60 min</td><td class="red r">EUR 48</td><td class="gold r">EUR 280</td><td class="green r">82.9%</td>
+          <td>Recommended 1x/month in member protocol.</td>
         </tr>
         <tr class="hl">
-          <td><strong>NAD+ 250mg</strong><small>Cellular repair, energy, anti-aging — the flagship</small></td>
-          <td class="c">2–3 hrs</td><td class="red r">€85</td><td class="gold r">€350</td><td class="green r">75.7%</td>
+          <td><strong>NAD+ 250mg</strong><small>Cellular repair, energy, anti-aging -- the flagship</small></td>
+          <td class="c">2-3 hrs</td><td class="red r">EUR 85</td><td class="gold r">EUR 350</td><td class="green r">75.7%</td>
           <td>Lower margin but highest ticket and retention driver.</td>
         </tr>
         <tr class="hl">
-          <td><strong>NAD+ 500mg</strong><small>Full longevity protocol — high-dose cellular regeneration</small></td>
-          <td class="c">3–4 hrs</td><td class="red r">€150</td><td class="gold r">€550</td><td class="green r">72.7%</td>
-          <td>Premium session. Architect members only or à la carte.</td>
+          <td><strong>NAD+ 500mg</strong><small>Full longevity protocol -- high-dose cellular regeneration</small></td>
+          <td class="c">3-4 hrs</td><td class="red r">EUR 150</td><td class="gold r">EUR 550</td><td class="green r">72.7%</td>
+          <td>Premium session. Architect members only or a la carte.</td>
         </tr>
         <tr>
           <td><strong>Hangover Recovery</strong><small>Saline 1L + B-complex + anti-nausea + glutathione</small></td>
-          <td class="c">40 min</td><td class="red r">€25</td><td class="gold r">€145</td><td class="green r">82.8%</td>
-          <td>High volume Fri–Sun. Walk-in friendly.</td>
+          <td class="c">40 min</td><td class="red r">EUR 25</td><td class="gold r">EUR 145</td><td class="green r">82.8%</td>
+          <td>High volume Fri-Sun. Walk-in friendly.</td>
         </tr>
         <tr>
           <td><strong>Performance Drip</strong><small>Amino acids + B-complex + magnesium + Vit C</small></td>
-          <td class="c">50 min</td><td class="red r">€30</td><td class="gold r">€190</td><td class="green r">84.2%</td>
+          <td class="c">50 min</td><td class="red r">EUR 30</td><td class="gold r">EUR 190</td><td class="green r">84.2%</td>
           <td>Post-event, athletic recovery positioning.</td>
         </tr>
       </tbody>
@@ -222,33 +255,33 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>Sauna Session</strong><small>Finnish sauna, 85°C, private or shared</small></td>
-          <td class="c">45 min</td><td class="red r">€4</td><td class="gold r">€30</td><td class="green r">86.7%</td>
+          <td><strong>Sauna Session</strong><small>Finnish sauna, 85 C, private or shared</small></td>
+          <td class="c">45 min</td><td class="red r">EUR 4</td><td class="gold r">EUR 30</td><td class="green r">86.7%</td>
           <td>Included in all memberships. Walk-in standalone.</td>
         </tr>
         <tr>
-          <td><strong>Cold Plunge</strong><small>Commercial grade, 4–8°C, filtered</small></td>
-          <td class="c">15 min</td><td class="red r">€2</td><td class="gold r">€25</td><td class="green r">92.0%</td>
+          <td><strong>Cold Plunge</strong><small>Commercial grade, 4-8 C, filtered</small></td>
+          <td class="c">15 min</td><td class="red r">EUR 2</td><td class="gold r">EUR 25</td><td class="green r">92.0%</td>
           <td>Included in all memberships. Walk-in standalone.</td>
         </tr>
         <tr class="hl">
           <td><strong>Contrast Therapy Package</strong><small>Sauna + cold plunge, alternating protocol, guided</small></td>
-          <td class="c">90 min</td><td class="red r">€6</td><td class="gold r">€65</td><td class="green r">90.8%</td>
-          <td>The signature VITARE walk-in experience. Highest volume service.</td>
+          <td class="c">90 min</td><td class="red r">EUR 6</td><td class="gold r">EUR 65</td><td class="green r">90.8%</td>
+          <td>The signature ROOTS walk-in experience. Highest volume service.</td>
         </tr>
         <tr>
           <td><strong>Red Light Therapy</strong><small>Full-body photobiomodulation panel</small></td>
-          <td class="c">20 min</td><td class="red r">€3</td><td class="gold r">€45</td><td class="green r">93.3%</td>
+          <td class="c">20 min</td><td class="red r">EUR 3</td><td class="gold r">EUR 45</td><td class="green r">93.3%</td>
           <td>4 sessions/month in Vitalist tier. Walk-in available.</td>
         </tr>
         <tr>
           <td><strong>Compression Therapy</strong><small>Full-leg NormaTec or equivalent</small></td>
-          <td class="c">30 min</td><td class="red r">€5</td><td class="gold r">€55</td><td class="green r">90.9%</td>
+          <td class="c">30 min</td><td class="red r">EUR 5</td><td class="gold r">EUR 55</td><td class="green r">90.9%</td>
           <td>Included in Vitalist tier. Add-on for Seeker.</td>
         </tr>
         <tr>
           <td><strong>Vitamin Injection (Shot)</strong><small>B12, glutathione, or NAD+ IM shot</small></td>
-          <td class="c">5 min</td><td class="red r">€8</td><td class="gold r">€55</td><td class="green r">85.5%</td>
+          <td class="c">5 min</td><td class="red r">EUR 8</td><td class="gold r">EUR 55</td><td class="green r">85.5%</td>
           <td>Quick walk-in upsell. Very high throughput.</td>
         </tr>
       </tbody>
@@ -262,352 +295,263 @@
         <tr><th>Item</th><th class="r">Our Cost</th><th class="r">Charge Price</th><th class="r">Gross Margin</th><th>Notes</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>NAD+ Sublingual Shot</strong></td><td class="red r">€5</td><td class="gold r">€18</td><td class="green r">72.2%</td><td>High repeat purchase</td></tr>
-        <tr><td><strong>Protein Shake (custom build)</strong></td><td class="red r">€3</td><td class="gold r">€12</td><td class="green r">75.0%</td><td>Post-session staple</td></tr>
-        <tr><td><strong>Creatine + Collagen Stack</strong></td><td class="red r">€2.50</td><td class="gold r">€11</td><td class="green r">77.3%</td><td>The Architect post-session drink</td></tr>
-        <tr><td><strong>Ashwagandha Latte</strong></td><td class="red r">€2</td><td class="gold r">€9</td><td class="green r">77.8%</td><td>Cortisol regulation, adaptogen blend</td></tr>
-        <tr><td><strong>Ginger + Turmeric Fire Shot</strong></td><td class="red r">€0.60</td><td class="gold r">€4</td><td class="green r">85.0%</td><td>Impulse buy at front desk. High volume.</td></tr>
-        <tr><td><strong>Matcha Ceremony</strong></td><td class="red r">€1.80</td><td class="gold r">€8</td><td class="green r">77.5%</td><td>Ceremonial grade, oat milk</td></tr>
-        <tr><td><strong>Longevity Bowl (acai + adaptogens)</strong></td><td class="red r">€4.50</td><td class="gold r">€16</td><td class="green r">71.9%</td><td>Food offering, drives lounge dwell time</td></tr>
-        <tr><td><strong>Post-Plunge Bone Broth</strong></td><td class="red r">€2</td><td class="gold r">€10</td><td class="green r">80.0%</td><td>Ritual item — almost always purchased after cold plunge</td></tr>
+        <tr><td><strong>NAD+ Sublingual Shot</strong></td><td class="red r">EUR 5</td><td class="gold r">EUR 18</td><td class="green r">72.2%</td><td>High repeat purchase</td></tr>
+        <tr><td><strong>Protein Shake (custom build)</strong></td><td class="red r">EUR 3</td><td class="gold r">EUR 12</td><td class="green r">75.0%</td><td>Post-session staple</td></tr>
+        <tr><td><strong>Creatine + Collagen Stack</strong></td><td class="red r">EUR 2.50</td><td class="gold r">EUR 11</td><td class="green r">77.3%</td><td>The Architect post-session drink</td></tr>
+        <tr><td><strong>Ashwagandha Latte</strong></td><td class="red r">EUR 2</td><td class="gold r">EUR 9</td><td class="green r">77.8%</td><td>Cortisol regulation, adaptogen blend</td></tr>
+        <tr><td><strong>Ginger + Turmeric Fire Shot</strong></td><td class="red r">EUR 0.60</td><td class="gold r">EUR 4</td><td class="green r">85.0%</td><td>Impulse buy at front desk. High volume.</td></tr>
+        <tr><td><strong>Matcha Ceremony</strong></td><td class="red r">EUR 1.80</td><td class="gold r">EUR 8</td><td class="green r">77.5%</td><td>Ceremonial grade, oat milk</td></tr>
+        <tr><td><strong>Longevity Bowl (acai + adaptogens)</strong></td><td class="red r">EUR 4.50</td><td class="gold r">EUR 16</td><td class="green r">71.9%</td><td>Food offering, drives lounge dwell time</td></tr>
+        <tr><td><strong>Post-Plunge Bone Broth</strong></td><td class="red r">EUR 2</td><td class="gold r">EUR 10</td><td class="green r">80.0%</td><td>Ritual item -- almost always purchased after cold plunge</td></tr>
         <tr class="tot">
           <td colspan="2"><strong>Average Bar Ticket (per visit)</strong></td>
-          <td class="r mono">est. €18</td>
-          <td colspan="2" style="color:var(--muted); font-size:12px;">Blended margin across bar items: ~77%</td>
+          <td class="r mono">est. EUR 18</td>
+          <td colspan="2" style="color:var(--text-muted); font-size:12px;">Blended margin across bar items: ~77%</td>
         </tr>
       </tbody>
     </table>
   </div>
+
+  <div class="mix-box">
+    <div class="mix-label">Membership Mix Assumption -- Year 1 (120 Members)</div>
+    <div class="mix-grid">
+      <div>The Seeker<br><span class="val">60</span> members<br>@ EUR 350 = EUR 21,000/mo</div>
+      <div>The Vitalist<br><span class="val">45</span> members<br>@ EUR 550 = EUR 24,750/mo</div>
+      <div>The Architect<br><span class="val">15</span> members<br>@ EUR 850 = EUR 12,750/mo</div>
+      <div>Total MRR<br><span class="val" style="color:var(--accent)">EUR 58,500</span>/mo<br>EUR 702,000/yr</div>
+    </div>
+  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 3: YEAR 1 P&L — STANDALONE        -->
+<!-- SECTION 5: MODEL A vs MODEL B              -->
 <!-- ═══════════════════════════════════════════ -->
-<div class="section">
-  <div class="eyebrow">Section 3 — Financial Model</div>
-  <h2>Year 1 P&amp;L — <em>Standalone Property</em></h2>
-  <p class="lead">Based on Jardinets de Gràcia / Sant Gervasi location. €7,500/month rent. No hotel partner. Conservative assumptions with a 3-month ramp period.</p>
+<div class="section-alt full-bleed">
+  <div class="section-alt-inner">
+    <div class="eyebrow">Section 5 -- Side by Side</div>
+    <h2>Model A vs Model B -- <em>With Elateve Fees</em></h2>
+    <p class="lead">Both models include all Elateve management fees. The investor receives 85% of EBITDA in both scenarios. Numbers shown are the investor's net position.</p>
 
-  <div class="summary-grid">
-    <div class="summary-card">
-      <div class="sc-label">Gross Revenue</div>
-      <div class="sc-value gold">€864k</div>
-      <div class="sc-sub">Year 1</div>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>Model A: <em>Hotel Partnership</em></h3>
+        <div class="compare-line">
+          <span class="compare-line-label">Gross Revenue</span>
+          <span class="compare-line-value accent">EUR 918,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Hotel Revenue Share (30%)</span>
+          <span class="compare-line-value negative">- EUR 275,400</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">COGS (7%)</span>
+          <span class="compare-line-value negative">- EUR 64,260</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Staff Payroll</span>
+          <span class="compare-line-value negative">- EUR 216,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Local Marketing</span>
+          <span class="compare-line-value negative">- EUR 20,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Tech / Admin / Insurance</span>
+          <span class="compare-line-value negative">- EUR 48,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Elateve Base Fee (EUR 8,500/mo)</span>
+          <span class="compare-line-value negative">- EUR 102,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Elateve Marketing (2%)</span>
+          <span class="compare-line-value negative">- EUR 18,360</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">EBITDA</span>
+          <span class="compare-line-value positive">EUR 173,980</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Elateve Success Fee (15%)</span>
+          <span class="compare-line-value negative">- EUR 26,097</span>
+        </div>
+        <div class="compare-line total">
+          <span class="compare-line-label"><strong>Investor Net Profit</strong></span>
+          <span class="compare-line-value positive">EUR 147,883</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Investment Required</span>
+          <span class="compare-line-value accent">EUR 414,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label"><strong>Year 1 ROI</strong></span>
+          <span class="compare-line-value accent" style="font-size: 20px; font-weight: 800;">35.7%</span>
+        </div>
+      </div>
+
+      <div class="compare-card featured">
+        <h3>Model B: <em>Standalone Property</em></h3>
+        <div class="compare-line">
+          <span class="compare-line-label">Gross Revenue</span>
+          <span class="compare-line-value accent">EUR 864,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">COGS (8%)</span>
+          <span class="compare-line-value negative">- EUR 69,120</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Gross Profit</span>
+          <span class="compare-line-value positive">EUR 794,880</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Rent (EUR 7,500/mo)</span>
+          <span class="compare-line-value negative">- EUR 90,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Staff Payroll</span>
+          <span class="compare-line-value negative">- EUR 216,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Local Marketing</span>
+          <span class="compare-line-value negative">- EUR 36,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Tech / Admin / Insurance / Utilities</span>
+          <span class="compare-line-value negative">- EUR 72,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Elateve Base Fee (EUR 8,500/mo)</span>
+          <span class="compare-line-value negative">- EUR 102,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Elateve Marketing (2%)</span>
+          <span class="compare-line-value negative">- EUR 17,280</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">EBITDA</span>
+          <span class="compare-line-value positive">EUR 261,600</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Elateve Success Fee (15%)</span>
+          <span class="compare-line-value negative">- EUR 39,240</span>
+        </div>
+        <div class="compare-line total">
+          <span class="compare-line-label"><strong>Investor Net Profit</strong></span>
+          <span class="compare-line-value positive">EUR 222,360</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Investment Required</span>
+          <span class="compare-line-value accent">EUR 527,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label"><strong>Year 1 ROI</strong></span>
+          <span class="compare-line-value accent" style="font-size: 20px; font-weight: 800;">42.2%</span>
+        </div>
+      </div>
     </div>
-    <div class="summary-card">
-      <div class="sc-label">Gross Margin</div>
-      <div class="sc-value green">91.8%</div>
-      <div class="sc-sub">Before OPEX</div>
-    </div>
-    <div class="summary-card hl">
-      <div class="sc-label">EBITDA</div>
-      <div class="sc-value green">€262k</div>
-      <div class="sc-sub">Net profit before tax</div>
-    </div>
-    <div class="summary-card">
-      <div class="sc-label">Net Margin</div>
-      <div class="sc-value gold">30.3%</div>
-      <div class="sc-sub">After all costs</div>
+
+    <div class="notes-box" style="margin-top: 24px;">
+      <strong>Key takeaway:</strong> While the hotel model has a lower entry cost and faster launch timeline, the standalone model delivers significantly higher margins and a cleaner franchise template. Both models prove professional management and scalability. The investor gets 85% of all profit; Elateve gets 15% success fee aligned with performance. The investor is buying a "managed asset" not a "job" -- Elateve runs everything.
     </div>
   </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 6: 3-YEAR PROJECTION               -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section">
+  <div class="eyebrow">Section 6 -- Growth Trajectory</div>
+  <h2>3-Year <em>Projection</em></h2>
+  <p class="lead">Standalone model. Conservative membership growth: 120 to 180 to 250 members. Shows investor net profit after all Elateve fees.</p>
 
   <div class="table-scroll">
     <table class="fin-table">
       <thead>
-        <tr><th>Line Item</th><th class="r">Monthly (€)</th><th class="r">Annual (€)</th><th class="r">% of Revenue</th></tr>
+        <tr><th>Metric</th><th class="r">Year 1</th><th class="r">Year 2</th><th class="r">Year 3</th></tr>
       </thead>
       <tbody>
         <tr class="subheader"><td colspan="4">REVENUE</td></tr>
         <tr>
-          <td><strong>Memberships</strong><small>120 members: 60 × €350, 45 × €550, 15 × €850</small></td>
-          <td class="mono r">€58,500</td><td class="mono r">€702,000</td><td class="c">81.2%</td>
-        </tr>
-        <tr>
-          <td><strong>Day Passes + Drop-ins</strong><small>~200 visits/mo @ €65</small></td>
-          <td class="mono r">€13,000</td><td class="mono r">€156,000</td><td class="c">18.0%</td>
-        </tr>
-        <tr>
-          <td><strong>IV Drips + Infusions (non-member)</strong><small>~30 sessions/mo, avg €220</small></td>
-          <td class="mono r">€6,600</td><td class="mono r">€79,200</td><td class="c">9.2%</td>
-        </tr>
-        <tr>
-          <td><strong>Diagnostic Testing (non-member)</strong><small>40 panels/mo × avg €165</small></td>
-          <td class="mono r">€6,600</td><td class="mono r">€79,200</td><td class="c">9.2%</td>
-        </tr>
-        <tr>
-          <td><strong>Longevity Bar + D2C Retail</strong><small>avg €18/visit × daily footfall</small></td>
-          <td class="mono r">€4,800</td><td class="mono r">€57,600</td><td class="c">6.7%</td>
-        </tr>
-        <tr>
-          <td><strong>Corporate 22@ Packages</strong><small>15 heads × €380/mo</small></td>
-          <td class="mono r">€5,700</td><td class="mono r">€68,400</td><td class="c">7.9%</td>
-        </tr>
-        <tr class="tot hl">
-          <td><strong>TOTAL GROSS REVENUE</strong></td>
-          <td class="mono r"><strong>€95,200</strong></td>
-          <td class="green r" style="font-family:'Cormorant Garamond',serif; font-size:18px"><strong>€864,000</strong></td>
-          <td class="c"><strong>100%</strong></td>
+          <td><strong>Total Gross Revenue</strong></td>
+          <td class="gold r">EUR 864,000</td>
+          <td class="gold r">EUR 1,320,000</td>
+          <td class="gold r">EUR 1,920,000</td>
         </tr>
 
-        <tr class="subheader"><td colspan="4">DIRECT COSTS (COGS)</td></tr>
+        <tr class="subheader"><td colspan="4">COSTS (incl. Elateve Base + Marketing)</td></tr>
         <tr>
-          <td><strong>Medical Supplies + IV Serums</strong><small>~8% of gross revenue — consumables only</small></td>
-          <td class="red r">(€7,000)</td><td class="red r">(€70,560)</td><td class="c">8.2%</td>
-        </tr>
-        <tr class="tot">
-          <td><strong>TOTAL COGS</strong></td>
-          <td class="red r"><strong>(€7,000)</strong></td><td class="red r"><strong>(€70,560)</strong></td><td class="c"><strong>8.2%</strong></td>
-        </tr>
-        <tr class="tot hl">
-          <td><strong>GROSS PROFIT</strong></td>
-          <td class="green r"><strong>€88,200</strong></td><td class="green r"><strong>€793,440</strong></td><td class="c"><strong>91.8%</strong></td>
-        </tr>
-
-        <tr class="subheader"><td colspan="4">OPERATING EXPENSES (OPEX)</td></tr>
-        <tr>
-          <td><strong>Annual Rent</strong><small>Jardinets de Gràcia, ~300m², €7,500/mo</small></td>
-          <td class="red r">(€7,500)</td><td class="red r">(€90,000)</td><td class="c">10.4%</td>
+          <td>COGS (8%)</td>
+          <td class="red r">(EUR 69,120)</td>
+          <td class="red r">(EUR 105,600)</td>
+          <td class="red r">(EUR 153,600)</td>
         </tr>
         <tr>
-          <td><strong>ELATEVE Management Fee + Revenue %</strong><small>Fixed fee + 3% of gross</small></td>
-          <td class="red r">(€6,500)</td><td class="red r">(€78,000)</td><td class="c">9.0%</td>
-        </tr>
-        <tr>
-          <td><strong>Staff Payroll</strong><small>Nurse (part-time), 2× front desk, bar staff, med director (part-time)</small></td>
-          <td class="red r">(€18,000)</td><td class="red r">(€216,000)</td><td class="c">25.0%</td>
-        </tr>
-        <tr>
-          <td><strong>Marketing + Member Acquisition</strong><small>Influencer programme, digital, events</small></td>
-          <td class="red r">(€4,500)</td><td class="red r">(€54,000)</td><td class="c">6.3%</td>
-        </tr>
-        <tr>
-          <td><strong>Technology + Booking + App + CRM</strong></td>
-          <td class="red r">(€1,700)</td><td class="red r">(€20,400)</td><td class="c">2.4%</td>
-        </tr>
-        <tr>
-          <td><strong>General + Admin + Legal + Insurance</strong><small>Medical malpractice, operations insurance, accounting</small></td>
-          <td class="red r">(€2,500)</td><td class="red r">(€30,000)</td><td class="c">3.5%</td>
-        </tr>
-        <tr>
-          <td><strong>Utilities (additional to rent)</strong><small>Electricity, water, high-usage for saunas and plunges</small></td>
-          <td class="red r">(€1,800)</td><td class="red r">(€21,600)</td><td class="c">2.5%</td>
-        </tr>
-        <tr class="tot">
-          <td><strong>TOTAL OPEX</strong></td>
-          <td class="red r"><strong>(€42,500)</strong></td><td class="red r"><strong>(€510,000)</strong></td><td class="c"><strong>59.0%</strong></td>
-        </tr>
-        <tr class="tot hl">
-          <td><strong>EBITDA (NET PROFIT BEFORE TAX)</strong></td>
-          <td class="green r"><strong>€21,833/mo</strong></td><td class="green r" style="font-family:'Cormorant Garamond',serif; font-size:20px"><strong>€262,000</strong></td><td class="c"><strong>30.3%</strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- ROI -->
-<div style="padding: 0 60px; max-width: 1100px; margin: 0 auto;">
-  <div class="roi-hero">
-    <p>Year 1 Return on Investment</p>
-    <h2 class="serif"><em>49.7%</em></h2>
-    <p>On total investment of €527,000</p>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 4: HOTEL vs STANDALONE             -->
-<!-- ═══════════════════════════════════════════ -->
-<div class="section">
-  <div class="eyebrow">Section 4 — Scenario Analysis</div>
-  <h2>Side by Side — <em>Hotel vs Standalone</em></h2>
-  <p class="lead">Two scenarios compared. The standalone model delivers higher margins, full brand control, and a cleaner franchise template.</p>
-
-  <div class="table-scroll">
-    <table class="fin-table">
-      <thead>
-        <tr><th>Metric</th><th class="c">Hotel Partnership</th><th class="c">Standalone Property</th><th>Verdict</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Total Investment Required</strong></td>
-          <td class="gold c">€414,000</td><td class="gold c">€527,000</td>
-          <td>Hotel = lower entry</td>
-        </tr>
-        <tr>
-          <td><strong>Annual Rent</strong></td>
-          <td class="c" style="color:#7A9B7F">None</td><td class="red c">€90,000/yr</td>
-          <td>Hotel saves on fixed costs</td>
-        </tr>
-        <tr>
-          <td><strong>Hotel Revenue Share (25%)</strong></td>
-          <td class="red c">€229,500/yr cost</td><td class="c" style="color:#7A9B7F">None</td>
-          <td>Standalone keeps all revenue</td>
-        </tr>
-        <tr>
-          <td><strong>Gross Revenue Year 1</strong></td>
-          <td class="mono c">€918,000</td><td class="mono c">€864,000</td>
-          <td>Hotel captures more tourist volume</td>
-        </tr>
-        <tr>
-          <td><strong>Gross Margin</strong></td>
-          <td class="c" style="color:#7A9B7F">68.1%</td><td class="c" style="color:#7A9B7F">91.8%</td>
-          <td><strong>Standalone wins significantly</strong></td>
-        </tr>
-        <tr class="hl">
-          <td><strong>EBITDA Year 1</strong></td>
-          <td class="c" style="color:#7A9B7F; font-family:'Cormorant Garamond',serif; font-size:18px">€158,500</td>
-          <td class="c" style="color:#7A9B7F; font-family:'Cormorant Garamond',serif; font-size:18px">€262,000</td>
-          <td><strong>Standalone €103k more profit</strong></td>
-        </tr>
-        <tr class="hl">
-          <td><strong>Net Margin</strong></td>
-          <td class="c" style="color:#7A9B7F">17.3%</td><td class="c" style="color:#7A9B7F">30.3%</td>
-          <td><strong>Standalone nearly doubles it</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Year 1 ROI on Investment</strong></td>
-          <td class="c" style="color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:18px">38.3%</td>
-          <td class="c" style="color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:18px">49.7%</td>
-          <td><strong>Standalone wins on return</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Brand Control</strong></td>
-          <td class="c" style="color:var(--muted)">Shared with hotel</td>
-          <td class="c" style="color:#7A9B7F">100% VITARE</td>
-          <td>Standalone cleaner for franchise</td>
-        </tr>
-        <tr>
-          <td><strong>Franchise Template</strong></td>
-          <td class="c" style="color:var(--muted)">Harder to replicate</td>
-          <td class="c" style="color:#7A9B7F">Clean, repeatable</td>
-          <td><strong>Standalone is the better pilot</strong></td>
-        </tr>
-        <tr>
-          <td><strong>Operational Risk</strong></td>
-          <td class="c" style="color:var(--muted)">Dependent on hotel relationship</td>
-          <td class="c" style="color:var(--gold)">Fully independent</td>
-          <td>Standalone is more resilient</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════ -->
-<!-- SECTION 5: 3-YEAR PROJECTION              -->
-<!-- ═══════════════════════════════════════════ -->
-<div class="section">
-  <div class="eyebrow">Section 5 — Growth Trajectory</div>
-  <h2>3-Year <em>Projection</em></h2>
-  <p class="lead">Standalone model. Conservative membership growth: 120 → 180 → 250 members. Margins improve as fixed costs are absorbed.</p>
-
-  <div class="table-scroll">
-    <table class="fin-table">
-      <thead>
-        <tr><th>Metric</th><th class="r">Year 1</th><th class="r">Year 2</th><th class="r">Year 3</th><th>Assumptions</th></tr>
-      </thead>
-      <tbody>
-        <tr class="subheader"><td colspan="5">INPUTS</td></tr>
-        <tr>
-          <td>Total Members</td>
-          <td class="mono r">120</td><td class="mono r">180</td><td class="mono r">250</td>
-          <td>Word of mouth + influencer programme</td>
-        </tr>
-        <tr>
-          <td>Avg Monthly Membership Fee</td>
-          <td class="mono r">€487</td><td class="mono r">€510</td><td class="mono r">€530</td>
-          <td>Mix shifts toward Vitalist + Architect over time</td>
-        </tr>
-        <tr>
-          <td>Day Pass Visits / Month</td>
-          <td class="mono r">200</td><td class="mono r">280</td><td class="mono r">380</td>
-          <td>Driven by hotel retreat flywheel in Yr 2–3</td>
-        </tr>
-
-        <tr class="subheader"><td colspan="5">REVENUE</td></tr>
-        <tr>
-          <td>Membership Revenue</td>
-          <td class="mono r">€702,000</td><td class="mono r">€1,101,600</td><td class="mono r">€1,590,000</td><td></td>
-        </tr>
-        <tr>
-          <td>Day Passes + Drop-ins</td>
-          <td class="mono r">€156,000</td><td class="mono r">€218,400</td><td class="mono r">€296,400</td><td></td>
-        </tr>
-        <tr>
-          <td>IV + Diagnostics + Services</td>
-          <td class="mono r">€158,400</td><td class="mono r">€210,000</td><td class="mono r">€285,000</td>
-          <td>Grows with member base and upsell maturity</td>
-        </tr>
-        <tr>
-          <td>Bar + Retail + Corporate</td>
-          <td class="mono r">€126,000</td><td class="mono r">€168,000</td><td class="mono r">€220,000</td><td></td>
-        </tr>
-        <tr class="tot hl">
-          <td><strong>TOTAL GROSS REVENUE</strong></td>
-          <td class="gold r"><strong>€864,000</strong></td>
-          <td class="gold r"><strong>€1,320,000</strong></td>
-          <td class="gold r"><strong>€1,920,000</strong></td><td></td>
-        </tr>
-
-        <tr class="subheader"><td colspan="5">COSTS</td></tr>
-        <tr>
-          <td>Total COGS (medical supplies)</td>
-          <td class="red r">(€70,560)</td><td class="red r">(€105,600)</td><td class="red r">(€153,600)</td>
-          <td>Stays at ~8% of revenue</td>
-        </tr>
-        <tr>
-          <td>Rent (fixed)</td>
-          <td class="red r">(€90,000)</td><td class="red r">(€93,600)</td><td class="red r">(€97,344)</td>
-          <td>+4% annual CPI adjustment</td>
-        </tr>
-        <tr>
-          <td>ELATEVE Management Fee + 3%</td>
-          <td class="red r">(€78,000)</td><td class="red r">(€91,200)</td><td class="red r">(€112,200)</td>
-          <td>Fixed fee grows modestly, % stays at 3%</td>
+          <td>Rent</td>
+          <td class="red r">(EUR 90,000)</td>
+          <td class="red r">(EUR 93,600)</td>
+          <td class="red r">(EUR 97,344)</td>
         </tr>
         <tr>
           <td>Staff Payroll</td>
-          <td class="red r">(€216,000)</td><td class="red r">(€264,000)</td><td class="red r">(€312,000)</td>
-          <td>Additional staff added in Yr 2 and Yr 3</td>
+          <td class="red r">(EUR 216,000)</td>
+          <td class="red r">(EUR 264,000)</td>
+          <td class="red r">(EUR 312,000)</td>
         </tr>
         <tr>
-          <td>Marketing</td>
-          <td class="red r">(€54,000)</td><td class="red r">(€60,000)</td><td class="red r">(€66,000)</td>
-          <td>Scales down as % of revenue — brand matures</td>
+          <td>Local Marketing</td>
+          <td class="red r">(EUR 36,000)</td>
+          <td class="red r">(EUR 40,000)</td>
+          <td class="red r">(EUR 44,000)</td>
         </tr>
         <tr>
-          <td>Tech + Admin + Insurance + Utilities</td>
-          <td class="red r">(€72,000)</td><td class="red r">(€76,000)</td><td class="red r">(€80,000)</td>
-          <td>Largely fixed</td>
+          <td>Tech / Admin / Insurance / Utilities</td>
+          <td class="red r">(EUR 72,000)</td>
+          <td class="red r">(EUR 76,000)</td>
+          <td class="red r">(EUR 80,000)</td>
         </tr>
-        <tr class="tot">
-          <td><strong>TOTAL COSTS</strong></td>
-          <td class="red r"><strong>(€580,560)</strong></td>
-          <td class="red r"><strong>(€690,400)</strong></td>
-          <td class="red r"><strong>(€821,144)</strong></td><td></td>
+        <tr>
+          <td>Elateve Base Fee (EUR 8,500/mo)</td>
+          <td class="red r">(EUR 102,000)</td>
+          <td class="red r">(EUR 102,000)</td>
+          <td class="red r">(EUR 102,000)</td>
+        </tr>
+        <tr>
+          <td>Elateve Marketing (2% of gross)</td>
+          <td class="red r">(EUR 17,280)</td>
+          <td class="red r">(EUR 26,400)</td>
+          <td class="red r">(EUR 38,400)</td>
         </tr>
 
-        <tr class="subheader"><td colspan="5">RETURNS</td></tr>
+        <tr class="subheader"><td colspan="4">RETURNS</td></tr>
         <tr class="tot hl">
           <td><strong>EBITDA</strong></td>
-          <td class="green r"><strong>€262,000</strong></td>
-          <td class="green r"><strong>€629,600</strong></td>
-          <td class="green r"><strong>€1,098,856</strong></td><td></td>
+          <td class="green r"><strong>EUR 261,600</strong></td>
+          <td class="green r"><strong>EUR 612,400</strong></td>
+          <td class="green r"><strong>EUR 1,092,656</strong></td>
+        </tr>
+        <tr>
+          <td>Elateve Success Fee (15% of EBITDA)</td>
+          <td class="red r">(EUR 39,240)</td>
+          <td class="red r">(EUR 91,860)</td>
+          <td class="red r">(EUR 163,898)</td>
+        </tr>
+        <tr class="tot hl">
+          <td><strong>Investor Net Profit</strong></td>
+          <td class="green r"><strong>EUR 222,360</strong></td>
+          <td class="green r"><strong>EUR 520,540</strong></td>
+          <td class="green r"><strong>EUR 928,758</strong></td>
         </tr>
         <tr class="hl">
-          <td><strong>Net Margin</strong></td>
-          <td class="green r">30.3%</td><td class="green r">47.7%</td><td class="green r">57.2%</td>
-          <td>Margins expand significantly as fixed costs dilute</td>
+          <td><strong>ROI on EUR 527k Investment</strong></td>
+          <td class="gold r">42.2%</td>
+          <td class="gold r">98.8%</td>
+          <td class="gold r">176.2%</td>
         </tr>
         <tr class="hl">
-          <td><strong>Cumulative Profit (on €527k investment)</strong></td>
-          <td class="gold r">€262,000</td><td class="gold r">€891,600</td><td class="gold r">€1,990,456</td>
-          <td>Investment fully recovered mid Year 2</td>
-        </tr>
-        <tr class="hl">
-          <td><strong>ROI on Initial Investment</strong></td>
-          <td class="gold r">49.7%</td><td class="gold r">119.5%</td><td class="gold r">208.5%</td>
-          <td>By Year 3, investment has returned 3× over</td>
+          <td><strong>Cumulative Investor Profit</strong></td>
+          <td class="gold r">EUR 222,360</td>
+          <td class="gold r">EUR 742,900</td>
+          <td class="gold r">EUR 1,671,658</td>
         </tr>
       </tbody>
     </table>
@@ -619,100 +563,100 @@
     <div class="bl-grid">
       <div>
         <div class="bl-sub" style="margin-bottom:8px">Total investment</div>
-        <div class="bl-big" style="color:var(--gold)">€527k</div>
+        <div class="bl-big" style="color:var(--accent)">EUR 527k</div>
         <div class="bl-sub" style="margin-top:8px">One time. Total investment.</div>
       </div>
       <div>
         <div class="bl-sub" style="margin-bottom:8px">Investment recovered by</div>
-        <div class="bl-big" style="color:var(--white)">Month 24</div>
+        <div class="bl-big" style="color:var(--text)">Month 24</div>
         <div class="bl-sub" style="margin-top:8px">Approx mid-Year 2.</div>
       </div>
       <div>
-        <div class="bl-sub" style="margin-bottom:8px">3-Year total return</div>
-        <div class="bl-big" style="color:#7A9B7F">€1.99M</div>
-        <div class="bl-sub" style="margin-top:8px">Cumulative EBITDA. Pure profit.</div>
+        <div class="bl-sub" style="margin-bottom:8px">3-Year investor profit</div>
+        <div class="bl-big" style="color:var(--green)">EUR 1.67M</div>
+        <div class="bl-sub" style="margin-top:8px">Cumulative net after Elateve fees.</div>
       </div>
     </div>
-    <div style="margin-top:40px; padding-top:32px; border-top:1px solid var(--mid); font-size:13px; color:var(--muted); max-width:600px; margin-left:auto; margin-right:auto; line-height:1.9;">
-      100% investor-owned business, managed by ELATEVE. The investor receives all profit above the management fee. ELATEVE retains the intellectual property and franchise rights. Franchise rollout conversation opens in Year 2 once the model is proven.
+    <div style="margin-top:36px; padding-top:28px; border-top:1px solid var(--border-accent); font-size:13px; color:var(--text-muted); max-width:600px; margin-left:auto; margin-right:auto; line-height:1.9;">
+      100% investor-owned entity, managed by Elateve. The investor receives 85% of EBITDA. Elateve receives a base fee, 2% marketing contribution, and 15% success fee -- all performance-aligned. Elateve retains the intellectual property and franchise rights. Right of First Refusal on expansion protects the investor.
     </div>
   </div>
 
   <div class="notes-box">
-    <strong style="color: var(--white);">Assumptions &amp; Notes:</strong> All figures are pre-tax. Year 1 assumes a 3-month ramp period (50% capacity months 1–3). Membership numbers are conservative — comparable Barcelona wellness clubs report 80–120 members within 6 months of opening. IV and diagnostic revenue assumes non-member walk-ins only; member usage is already priced into the membership tiers. ELATEVE management fee modelled at €50,000 fixed + 3% of gross revenue annually. All costs in EUR. Property rent indexed at 4% annual CPI from Year 2.
+    <strong>Assumptions &amp; Notes:</strong> All figures are pre-tax. Year 1 assumes a 3-month ramp period (50% capacity months 1-3). Membership numbers are conservative -- comparable Barcelona wellness clubs report 80-120 members within 6 months of opening. IV and diagnostic revenue assumes non-member walk-ins only; member usage is already priced into the membership tiers. Elateve management fee: EUR 8,500/month base + 2% gross revenue marketing contribution + 15% EBITDA success fee. All costs in EUR. Property rent indexed at 4% annual CPI from Year 2. Investment includes legal setup costs (company formation, management structures, licensing) -- this is an OpCo/PropCo structure.
   </div>
 </div>
 
 <!-- CAPEX -->
 <div class="section">
   <div class="eyebrow">Capital Requirements</div>
-  <h2>What We Need — <em>The Investment</em></h2>
+  <h2>What We Need -- <em>The Investment</em></h2>
   <div class="capex-grid">
     <div>
       <div class="capex-item">
-        <span class="capex-label">Interior Fit-Out (micro-cement, travertine, plumbing, lighting)</span>
-        <span class="capex-amount serif">€120,000</span>
+        <span class="capex-label">Interior Fit-Out (micro-cement, stone, plumbing, lighting)</span>
+        <span class="capex-amount">EUR 120,000</span>
       </div>
       <div class="capex-item">
-        <span class="capex-label">Commercial Saunas (2×) + Cold Plunges (2×)</span>
-        <span class="capex-amount serif">€35,000</span>
+        <span class="capex-label">Commercial Saunas (2x) + Cold Plunges (2x)</span>
+        <span class="capex-amount">EUR 35,000</span>
       </div>
       <div class="capex-item">
-        <span class="capex-label">Full-Body Red Light Therapy Panels (2×)</span>
-        <span class="capex-amount serif">€18,000</span>
+        <span class="capex-label">Full-Body Red Light Therapy Panels (2x)</span>
+        <span class="capex-amount">EUR 18,000</span>
       </div>
     </div>
     <div>
       <div class="capex-item">
         <span class="capex-label">IV Drip Lounge + Diagnostic Room Setup</span>
-        <span class="capex-amount serif">€12,000</span>
+        <span class="capex-amount">EUR 12,000</span>
       </div>
       <div class="capex-item">
         <span class="capex-label">Compression Therapy + Recovery Equipment</span>
-        <span class="capex-amount serif">€15,000</span>
+        <span class="capex-amount">EUR 15,000</span>
       </div>
       <div class="capex-item">
-        <span class="capex-label">Operating Buffer + Legal + Medical Licensing + Permitting</span>
-        <span class="capex-amount serif">€60,000</span>
+        <span class="capex-label">Legal Setup + Medical Licensing + Company Formation</span>
+        <span class="capex-amount">EUR 60,000</span>
       </div>
     </div>
   </div>
   <div class="capex-total">
     <div>
       <div class="capex-total-label">Total Launch CAPEX</div>
-      <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">Equipment, fit-out, and legal costs</div>
+      <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Equipment, fit-out, legal, and licensing costs</div>
     </div>
-    <div class="capex-total-amount serif">€260,000</div>
+    <div class="capex-total-amount">EUR 260,000</div>
   </div>
   <div class="opex-buffer">
     <div>
       <div class="opex-buffer-label">+ 6-Month OPEX Buffer</div>
     </div>
-    <div class="opex-buffer-amount serif">€267,000</div>
+    <div class="opex-buffer-amount">EUR 267,000</div>
   </div>
   <div class="total-investment">
     <div>
       <div class="total-investment-label">Total Investment Required</div>
-      <div class="total-investment-sub">To launch VITARE Barcelona and fund operations through month 6</div>
+      <div class="total-investment-sub">To launch ROOTS Barcelona and fund operations through month 6</div>
     </div>
-    <div class="total-investment-amount serif">€527,000</div>
+    <div class="total-investment-amount">EUR 527,000</div>
   </div>
 </div>
 
 <div class="page-nav">
   <a href="hotel.html" class="page-nav-link prev">
     <span class="page-nav-label">Previous</span>
-    <span class="page-nav-title serif">Hotel Strategy</span>
+    <span class="page-nav-title">Hotel Strategy</span>
   </a>
   <a href="marketing.html" class="page-nav-link next">
     <span class="page-nav-label">Next</span>
-    <span class="page-nav-title serif">Marketing</span>
+    <span class="page-nav-title">Marketing</span>
   </a>
 </div>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand serif">VITARE</div>
+    <div class="footer-brand">ROOTS</div>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="concept.html">Concept</a>
@@ -722,8 +666,8 @@
       <a href="marketing.html">Marketing</a>
     </div>
     <div class="footer-meta">
-      <span>Confidential — For Investor Use Only</span>
-      <span>VITARE &copy; 2026</span>
+      <span>Confidential -- For Investor Use Only</span>
+      <span>ROOTS &copy; 2026 -- Managed by Elateve</span>
     </div>
   </div>
 </footer>
