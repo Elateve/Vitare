@@ -35,7 +35,7 @@
 <div class="section">
   <div class="eyebrow">Section 1 -- Ownership &amp; Entity Structure</div>
   <h2>How It <em>Works</em></h2>
-  <p class="lead">The investor funds and owns the centre. Elateve runs day-to-day operations. The projected split shown here is 80/20 (80% investor, 20% Elateve) as a middle-point estimate -- the final percentage depends on the agreement reached between both parties. See the <a href="management.html" style="color: var(--accent);">Management Agreement</a> for full terms.</p>
+  <p class="lead">The investor funds and owns the centre. Elateve runs day-to-day operations. The projected split shown here uses 80% as the middle-point estimate for the owner's share of EBITDA -- the final percentage depends on the agreement reached between both parties. See the <a href="management.html" style="color: var(--accent);">Management Agreement</a> for full terms.</p>
 
   <div class="entity-grid">
     <div class="entity-card">
@@ -44,11 +44,11 @@
     </div>
     <div class="entity-card">
       <h4>Investor</h4>
-      <p>Provides 100% of the CAPEX and operating buffer. Receives <strong>80% of net profit</strong>. No day-to-day involvement required -- the centre runs without you.</p>
+      <p>Provides 100% of the CAPEX and operating buffer. Receives <strong>80% of EBITDA</strong>. No day-to-day involvement required -- the centre runs without you.</p>
     </div>
     <div class="entity-card">
       <h4>Elateve</h4>
-      <p>Handles operations, hiring, medical compliance, marketing, and reporting. Receives <strong>20% of net profit</strong> -- compensated only when the centre is profitable, fully aligned with the investor.</p>
+      <p>Handles operations, hiring, medical compliance, marketing, and reporting. Receives <strong>EUR 8,500/mo base fee + 14% of EBITDA</strong>. 6% of EBITDA is reserved for a staff incentive pool.</p>
     </div>
   </div>
 </div>
@@ -60,7 +60,7 @@
   <div class="section-alt-inner">
     <div class="eyebrow">Section 2 -- Revenue Flow</div>
     <h2>The Waterfall -- <em>How EUR 1 Flows</em></h2>
-    <p class="lead">Complete transparency on how revenue moves through the business. The entity collects all gross revenue. Costs are deducted in order. The remaining net profit is split 80/20 between the investor and Elateve.</p>
+    <p class="lead">Complete transparency on how revenue moves through the business. The entity collects all gross revenue. Costs are deducted in order. EBITDA is split: Owner 80%, Elateve 14%, Staff Incentive Pool 6%. 80% is the projected middle-point -- final split subject to agreement.</p>
 
     <div class="waterfall">
       <div class="waterfall-step highlight">
@@ -82,7 +82,7 @@
       <div class="waterfall-step">
         <div class="waterfall-num">3</div>
         <div class="waterfall-content">
-          <div class="waterfall-label">Rent + Local OPEX<small>Property rent, utilities, tech, insurance, admin</small></div>
+          <div class="waterfall-label">Rent + OPEX<small>Property rent, utilities, tech, insurance, admin</small></div>
           <div class="waterfall-value negative">- OPEX</div>
         </div>
       </div>
@@ -95,27 +95,43 @@
         </div>
       </div>
       <div class="waterfall-connector"></div>
-      <div class="waterfall-step highlight">
+      <div class="waterfall-step">
         <div class="waterfall-num">5</div>
         <div class="waterfall-content">
-          <div class="waterfall-label">= EBITDA (Net Profit)<small>What's left after all operating costs</small></div>
+          <div class="waterfall-label">Elateve Base Fee<small>EUR 8,500/mo -- fixed management fee</small></div>
+          <div class="waterfall-value negative">- EUR 8,500/mo</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step highlight">
+        <div class="waterfall-num">6</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">= EBITDA<small>What's left after all operating costs</small></div>
           <div class="waterfall-value result">= EBITDA</div>
         </div>
       </div>
       <div class="waterfall-connector"></div>
       <div class="waterfall-step">
-        <div class="waterfall-num">6</div>
+        <div class="waterfall-num">7</div>
         <div class="waterfall-content">
-          <div class="waterfall-label">Elateve Share<small>20% of EBITDA -- performance-aligned, paid only on profit</small></div>
-          <div class="waterfall-value negative">- 20%</div>
+          <div class="waterfall-label">Owner (80% of EBITDA)<small>Projected middle-point -- final split subject to agreement</small></div>
+          <div class="waterfall-value result">80%</div>
         </div>
       </div>
       <div class="waterfall-connector"></div>
-      <div class="waterfall-step highlight">
-        <div class="waterfall-num">7</div>
+      <div class="waterfall-step">
+        <div class="waterfall-num">8</div>
         <div class="waterfall-content">
-          <div class="waterfall-label">= Investor Net Profit<small>80% of EBITDA flows to the investor</small></div>
-          <div class="waterfall-value result">= 80% of EBITDA</div>
+          <div class="waterfall-label">Elateve Performance (14% of EBITDA)<small>Performance-aligned, paid only on profit</small></div>
+          <div class="waterfall-value negative">14%</div>
+        </div>
+      </div>
+      <div class="waterfall-connector"></div>
+      <div class="waterfall-step">
+        <div class="waterfall-num">9</div>
+        <div class="waterfall-content">
+          <div class="waterfall-label">Staff Incentive Pool (6% of EBITDA)<small>Phantom shares / bonuses for retention</small></div>
+          <div class="waterfall-value negative">6%</div>
         </div>
       </div>
     </div>
@@ -139,27 +155,27 @@
       <tbody>
         <tr>
           <td><strong>Hydration Boost</strong><small>Saline 1L + electrolytes + B-complex</small></td>
-          <td class="c">30 min</td><td class="red r">EUR 18</td><td class="gold r">EUR 95</td><td class="green r">80.9%</td>
+          <td class="c">30 min</td><td class="red r">EUR 18</td><td class="gold r">EUR 110</td><td class="green r">83.6%</td>
           <td>Entry-level IV. Gateway for new clients.</td>
         </tr>
         <tr>
           <td><strong>Myers Cocktail</strong><small>Vit C, B-complex, magnesium, calcium, zinc</small></td>
-          <td class="c">45 min</td><td class="red r">EUR 28</td><td class="gold r">EUR 165</td><td class="green r">83.0%</td>
+          <td class="c">45 min</td><td class="red r">EUR 28</td><td class="gold r">EUR 185</td><td class="green r">84.9%</td>
           <td>Most popular general wellness drip.</td>
         </tr>
         <tr>
           <td><strong>Immunity Shield</strong><small>High-dose Vit C 10g + zinc + glutathione</small></td>
-          <td class="c">45 min</td><td class="red r">EUR 32</td><td class="gold r">EUR 185</td><td class="green r">82.7%</td>
+          <td class="c">45 min</td><td class="red r">EUR 32</td><td class="gold r">EUR 205</td><td class="green r">84.4%</td>
           <td>High demand in winter months.</td>
         </tr>
         <tr>
           <td><strong>Glow Drip</strong><small>Glutathione 1200mg + Vit C 2g + biotin + B-complex</small></td>
-          <td class="c">50 min</td><td class="red r">EUR 38</td><td class="gold r">EUR 220</td><td class="green r">82.7%</td>
+          <td class="c">50 min</td><td class="red r">EUR 38</td><td class="gold r">EUR 245</td><td class="green r">84.5%</td>
           <td>Top seller with female demographic.</td>
         </tr>
         <tr>
           <td><strong>Anti-Aging Protocol</strong><small>Glutathione 2g + Vit C + amino acids + biotin</small></td>
-          <td class="c">60 min</td><td class="red r">EUR 48</td><td class="gold r">EUR 280</td><td class="green r">82.9%</td>
+          <td class="c">60 min</td><td class="red r">EUR 48</td><td class="gold r">EUR 310</td><td class="green r">84.5%</td>
           <td>Recommended 1x/month in member protocol.</td>
         </tr>
         <tr class="hl">
@@ -173,14 +189,29 @@
           <td>Premium session. Architect members only or a la carte.</td>
         </tr>
         <tr>
-          <td><strong>Hangover Recovery</strong><small>Saline 1L + B-complex + anti-nausea + glutathione</small></td>
-          <td class="c">40 min</td><td class="red r">EUR 25</td><td class="gold r">EUR 145</td><td class="green r">82.8%</td>
+          <td><strong>The Morning After</strong><small>Saline 1L + B-complex + anti-nausea + glutathione</small></td>
+          <td class="c">40 min</td><td class="red r">EUR 22</td><td class="gold r">EUR 160</td><td class="green r">86.3%</td>
           <td>High volume Fri-Sun. Walk-in friendly.</td>
         </tr>
         <tr>
-          <td><strong>Performance Drip</strong><small>Amino acids + B-complex + magnesium + Vit C</small></td>
-          <td class="c">50 min</td><td class="red r">EUR 30</td><td class="gold r">EUR 190</td><td class="green r">84.2%</td>
+          <td><strong>The Athlete</strong><small>Amino acids + B-complex + magnesium + Vit C</small></td>
+          <td class="c">50 min</td><td class="red r">EUR 32</td><td class="gold r">EUR 210</td><td class="green r">84.8%</td>
           <td>Post-event, athletic recovery positioning.</td>
+        </tr>
+        <tr>
+          <td><strong>The Detox</strong><small>Glutathione 2g + alpha-lipoic acid + Vit C 5g + selenium + B-complex</small></td>
+          <td class="c">55 min</td><td class="red r">EUR 42</td><td class="gold r">EUR 260</td><td class="green r">83.8%</td>
+          <td>Deep detox protocol. Pairs with heavy metal panel.</td>
+        </tr>
+        <tr>
+          <td><strong>The Focus</strong><small>NAD+ 100mg + B-complex + L-carnitine + magnesium + alpha-lipoic acid</small></td>
+          <td class="c">60 min</td><td class="red r">EUR 55</td><td class="gold r">EUR 290</td><td class="green r">81.0%</td>
+          <td>Cognitive performance drip. Popular with 22@ execs.</td>
+        </tr>
+        <tr>
+          <td><strong>The Sculpt</strong><small>L-carnitine 1g + B-complex + chromium + zinc + amino acids</small></td>
+          <td class="c">45 min</td><td class="red r">EUR 30</td><td class="gold r">EUR 220</td><td class="green r">86.4%</td>
+          <td>Body composition support. Pairs with EMS training.</td>
         </tr>
       </tbody>
     </table>
@@ -219,9 +250,29 @@
           <td>Included in Vitalist tier. Add-on for Seeker.</td>
         </tr>
         <tr>
-          <td><strong>Vitamin Injection (Shot)</strong><small>B12, glutathione, or NAD+ IM shot</small></td>
-          <td class="c">5 min</td><td class="red r">EUR 8</td><td class="gold r">EUR 55</td><td class="green r">85.5%</td>
+          <td><strong>B12 Shot</strong><small>Vitamin B12 intramuscular injection</small></td>
+          <td class="c">5 min</td><td class="red r">EUR 5</td><td class="gold r">EUR 40</td><td class="green r">87.5%</td>
           <td>Quick walk-in upsell. Very high throughput.</td>
+        </tr>
+        <tr>
+          <td><strong>Glutathione Shot</strong><small>Glutathione intramuscular injection</small></td>
+          <td class="c">5 min</td><td class="red r">EUR 8</td><td class="gold r">EUR 55</td><td class="green r">85.5%</td>
+          <td>Detox and skin brightening. Popular add-on.</td>
+        </tr>
+        <tr>
+          <td><strong>NAD+ IM Shot</strong><small>NAD+ intramuscular injection</small></td>
+          <td class="c">5 min</td><td class="red r">EUR 12</td><td class="gold r">EUR 65</td><td class="green r">81.5%</td>
+          <td>Quick NAD+ boost without full infusion time.</td>
+        </tr>
+        <tr>
+          <td><strong>Vitamin D3 + K2 Shot</strong><small>Vitamin D3 + K2 intramuscular injection</small></td>
+          <td class="c">5 min</td><td class="red r">EUR 6</td><td class="gold r">EUR 45</td><td class="green r">86.7%</td>
+          <td>High demand year-round. Deficiency-driven upsell.</td>
+        </tr>
+        <tr>
+          <td><strong>Magnesium IM Shot</strong><small>Magnesium intramuscular injection</small></td>
+          <td class="c">5 min</td><td class="red r">EUR 5</td><td class="gold r">EUR 40</td><td class="green r">87.5%</td>
+          <td>Sleep and recovery support. Common deficiency.</td>
         </tr>
       </tbody>
     </table>
@@ -258,7 +309,7 @@
   <div class="section-alt-inner">
     <div class="eyebrow">Section 4 -- Year 1 P&amp;L</div>
     <h2>Year 1 -- <em>The Numbers</em></h2>
-    <p class="lead">Conservative Year 1 forecast for the standalone Barcelona centre. 120 members at the blended membership mix above, plus walk-in IV, diagnostics, retail, and corporate revenue. Net profit is split 80/20 between the investor and Elateve.</p>
+    <p class="lead">Conservative Year 1 forecast for the standalone Barcelona centre. 120 members at the blended membership mix above, plus walk-in IV, diagnostics, retail, and corporate revenue. EBITDA is split: Owner 80%, Elateve 14%, Staff Incentive Pool 6%.</p>
 
     <div class="compare-grid">
       <div class="compare-card featured">
@@ -272,50 +323,54 @@
           <span class="compare-line-value negative">- EUR 69,120</span>
         </div>
         <div class="compare-line">
-          <span class="compare-line-label">Gross Profit</span>
-          <span class="compare-line-value positive">EUR 794,880</span>
-        </div>
-        <div class="compare-line">
           <span class="compare-line-label">Rent (EUR 7,500/mo)</span>
           <span class="compare-line-value negative">- EUR 90,000</span>
         </div>
         <div class="compare-line">
-          <span class="compare-line-label">Staff Payroll</span>
-          <span class="compare-line-value negative">- EUR 216,000</span>
+          <span class="compare-line-label">Staff Payroll (doctor, nurse, receptionist, assistant)</span>
+          <span class="compare-line-value negative">- EUR 138,000</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Elateve Base Fee (EUR 8,500/mo)</span>
+          <span class="compare-line-value negative">- EUR 102,000</span>
         </div>
         <div class="compare-line">
           <span class="compare-line-label">Local Marketing</span>
           <span class="compare-line-value negative">- EUR 36,000</span>
         </div>
         <div class="compare-line">
-          <span class="compare-line-label">Tech / Admin / Insurance / Utilities</span>
-          <span class="compare-line-value negative">- EUR 72,000</span>
+          <span class="compare-line-label">Tech / Admin / Insurance</span>
+          <span class="compare-line-value negative">- EUR 48,000</span>
         </div>
         <div class="compare-line">
           <span class="compare-line-label">EBITDA</span>
           <span class="compare-line-value positive">EUR 380,880</span>
         </div>
         <div class="compare-line">
-          <span class="compare-line-label">Elateve (20% of EBITDA)</span>
-          <span class="compare-line-value negative">- EUR 76,176</span>
-        </div>
-        <div class="compare-line total">
-          <span class="compare-line-label"><strong>Investor Net Profit (80%)</strong></span>
+          <span class="compare-line-label">Owner (80% of EBITDA)</span>
           <span class="compare-line-value positive">EUR 304,704</span>
         </div>
         <div class="compare-line">
-          <span class="compare-line-label">Investment Required</span>
-          <span class="compare-line-value accent">EUR 527,000</span>
+          <span class="compare-line-label">Elateve Performance (14% of EBITDA)</span>
+          <span class="compare-line-value negative">- EUR 53,323</span>
         </div>
         <div class="compare-line">
+          <span class="compare-line-label">Staff Incentive Pool (6% of EBITDA)</span>
+          <span class="compare-line-value negative">- EUR 22,853</span>
+        </div>
+        <div class="compare-line">
+          <span class="compare-line-label">Investment Required</span>
+          <span class="compare-line-value accent">EUR 600,000</span>
+        </div>
+        <div class="compare-line total">
           <span class="compare-line-label"><strong>Year 1 ROI</strong></span>
-          <span class="compare-line-value accent" style="font-size: 20px; font-weight: 800;">57.8%</span>
+          <span class="compare-line-value accent" style="font-size: 20px; font-weight: 800;">50.8%</span>
         </div>
       </div>
     </div>
 
     <div class="notes-box" style="margin-top: 24px;">
-      <strong>Key takeaway:</strong> The investor funds and owns the centre, Elateve runs it, and net profit is split 80/20. Elateve only earns when the centre is profitable -- the incentives are fully aligned, and Year 1 still delivers a 57.8% return on the investor's capital.
+      <strong>Key takeaway:</strong> The investor funds and owns the centre, Elateve runs it. Owner receives 80% of EBITDA (projected middle-point -- final split subject to agreement). Elateve receives EUR 8,500/mo base + 14% of EBITDA. 6% of EBITDA reserved for staff incentive pool (phantom shares/bonuses for retention). Year 1 delivers a 50.8% return on the investor's capital.
     </div>
   </div>
 </div>
@@ -326,7 +381,7 @@
 <div class="section">
   <div class="eyebrow">Section 5 -- Growth Trajectory</div>
   <h2>3-Year <em>Projection</em></h2>
-  <p class="lead">Standalone Barcelona centre. Conservative membership growth: 120 to 180 to 250 members. Net profit is split 80/20 between the investor and Elateve.</p>
+  <p class="lead">Standalone Barcelona centre. Conservative membership growth: 120 to 180 to 250 members. EBITDA split: Owner 80%, Elateve 14%, Staff Pool 6%. 80% is the projected middle-point -- final split subject to agreement.</p>
 
   <div class="table-scroll">
     <table class="fin-table">
@@ -357,9 +412,15 @@
         </tr>
         <tr>
           <td>Staff Payroll</td>
-          <td class="red r">(EUR 216,000)</td>
-          <td class="red r">(EUR 264,000)</td>
-          <td class="red r">(EUR 312,000)</td>
+          <td class="red r">(EUR 138,000)</td>
+          <td class="red r">(EUR 168,000)</td>
+          <td class="red r">(EUR 198,000)</td>
+        </tr>
+        <tr>
+          <td>Elateve Base Fee (EUR 8,500/mo)</td>
+          <td class="red r">(EUR 102,000)</td>
+          <td class="red r">(EUR 102,000)</td>
+          <td class="red r">(EUR 102,000)</td>
         </tr>
         <tr>
           <td>Local Marketing</td>
@@ -368,42 +429,48 @@
           <td class="red r">(EUR 44,000)</td>
         </tr>
         <tr>
-          <td>Tech / Admin / Insurance / Utilities</td>
-          <td class="red r">(EUR 72,000)</td>
-          <td class="red r">(EUR 76,000)</td>
-          <td class="red r">(EUR 80,000)</td>
+          <td>Tech / Admin / Insurance</td>
+          <td class="red r">(EUR 48,000)</td>
+          <td class="red r">(EUR 52,000)</td>
+          <td class="red r">(EUR 56,000)</td>
         </tr>
 
         <tr class="subheader"><td colspan="4">RETURNS</td></tr>
         <tr class="tot hl">
           <td><strong>EBITDA</strong></td>
           <td class="green r"><strong>EUR 380,880</strong></td>
-          <td class="green r"><strong>EUR 740,800</strong></td>
-          <td class="green r"><strong>EUR 1,233,056</strong></td>
-        </tr>
-        <tr>
-          <td>Elateve (20% of EBITDA)</td>
-          <td class="red r">(EUR 76,176)</td>
-          <td class="red r">(EUR 148,160)</td>
-          <td class="red r">(EUR 246,611)</td>
+          <td class="green r"><strong>EUR 758,800</strong></td>
+          <td class="green r"><strong>EUR 1,269,056</strong></td>
         </tr>
         <tr class="tot hl">
-          <td><strong>Investor Net Profit (80%)</strong></td>
+          <td><strong>Owner (80% of EBITDA)</strong></td>
           <td class="green r"><strong>EUR 304,704</strong></td>
-          <td class="green r"><strong>EUR 592,640</strong></td>
-          <td class="green r"><strong>EUR 986,445</strong></td>
+          <td class="green r"><strong>EUR 607,040</strong></td>
+          <td class="green r"><strong>EUR 1,015,245</strong></td>
+        </tr>
+        <tr>
+          <td>Elateve Performance (14%)</td>
+          <td class="red r">(EUR 53,323)</td>
+          <td class="red r">(EUR 106,232)</td>
+          <td class="red r">(EUR 177,668)</td>
+        </tr>
+        <tr>
+          <td>Staff Incentive Pool (6%)</td>
+          <td class="red r">(EUR 22,853)</td>
+          <td class="red r">(EUR 45,528)</td>
+          <td class="red r">(EUR 76,143)</td>
         </tr>
         <tr class="hl">
-          <td><strong>ROI on EUR 527k Investment</strong></td>
-          <td class="gold r">57.8%</td>
-          <td class="gold r">112.5%</td>
-          <td class="gold r">187.2%</td>
+          <td><strong>ROI on EUR 600k Investment</strong></td>
+          <td class="gold r">50.8%</td>
+          <td class="gold r">101.2%</td>
+          <td class="gold r">169.2%</td>
         </tr>
         <tr class="hl">
-          <td><strong>Cumulative Investor Profit</strong></td>
+          <td><strong>Cumulative Owner Profit</strong></td>
           <td class="gold r">EUR 304,704</td>
-          <td class="gold r">EUR 897,344</td>
-          <td class="gold r">EUR 1,883,789</td>
+          <td class="gold r">EUR 911,744</td>
+          <td class="gold r">EUR 1,926,989</td>
         </tr>
       </tbody>
     </table>
@@ -415,33 +482,33 @@
     <div class="bl-grid">
       <div>
         <div class="bl-sub" style="margin-bottom:8px">Total investment</div>
-        <div class="bl-big" style="color:var(--accent)">EUR 527k</div>
+        <div class="bl-big" style="color:var(--accent)">EUR 600k</div>
         <div class="bl-sub" style="margin-top:8px">One time. Total investment.</div>
       </div>
       <div>
         <div class="bl-sub" style="margin-bottom:8px">Investment recovered by</div>
-        <div class="bl-big" style="color:var(--text)">Month 17</div>
+        <div class="bl-big" style="color:var(--text)">Month 18</div>
         <div class="bl-sub" style="margin-top:8px">Inside Year 2.</div>
       </div>
       <div>
-        <div class="bl-sub" style="margin-bottom:8px">3-Year investor profit</div>
-        <div class="bl-big" style="color:var(--green)">EUR 1.88M</div>
-        <div class="bl-sub" style="margin-top:8px">Cumulative net, after 20% management share.</div>
+        <div class="bl-sub" style="margin-bottom:8px">3-Year owner profit</div>
+        <div class="bl-big" style="color:var(--green)">EUR 1.93M</div>
+        <div class="bl-sub" style="margin-top:8px">Cumulative net, after Elateve + staff shares.</div>
       </div>
     </div>
     <div style="margin-top:36px; padding-top:28px; border-top:1px solid var(--border-accent); font-size:13px; color:var(--text-muted); max-width:600px; margin-left:auto; margin-right:auto; line-height:1.9;">
-      The investor funds and owns the centre. Elateve runs day-to-day operations. The 80/20 split shown here is a middle-point projection -- the final split depends on the agreement reached. Elateve is compensated only when the centre is profitable.
+      Owner receives 80% of EBITDA (projected middle-point -- final split subject to agreement). Elateve receives EUR 8,500/mo base + 14% of EBITDA. 6% of EBITDA reserved for staff incentive pool (phantom shares/bonuses for retention).
     </div>
   </div>
 
   <div class="notes-box">
-    <strong>Assumptions &amp; Notes:</strong> All figures are pre-tax. Year 1 assumes a 3-month ramp period (50% capacity months 1-3). Membership numbers are conservative -- comparable Barcelona wellness clubs report 80-120 members within 6 months of opening. IV and diagnostic revenue assumes non-member walk-ins only; member usage is already priced into the membership tiers. Elateve receives 20% of EBITDA -- paid only when the centre is profitable. All costs in EUR. Property rent indexed at 4% annual CPI from Year 2. Investment includes legal setup costs (company formation, licensing).
+    <strong>Assumptions &amp; Notes:</strong> All figures are pre-tax. Year 1 assumes a 3-month ramp period (50% capacity months 1-3). Membership numbers are conservative -- comparable Barcelona wellness clubs report 80-120 members within 6 months of opening. IV and diagnostic revenue assumes non-member walk-ins only; member usage is already priced into the membership tiers. Owner receives 80% of EBITDA (projected middle-point -- final split subject to agreement). Elateve receives EUR 8,500/mo base + 14% of EBITDA. 6% of EBITDA reserved for staff incentive pool (phantom shares/bonuses for retention). All costs in EUR. Property rent indexed at 4% annual CPI from Year 2. Investment includes legal setup, company formation, and licensing.
   </div>
 </div>
 
 <!-- CAPEX -->
 <div class="section">
-  <div class="eyebrow">Capital Requirements</div>
+  <div class="eyebrow">Section 6 -- Capital Requirements</div>
   <h2>What We Need -- <em>The Investment</em></h2>
 
   <div class="fin-label" style="margin-top:16px;">Phase 1 -- Launch Equipment</div>
@@ -452,12 +519,12 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>Finnish Sauna</strong><small>Custom 4-6 person, premium cedarwood, 85°C</small></td>
-          <td class="c">2</td><td class="gold r">EUR 12,000</td><td class="gold r">EUR 24,000</td>
+          <td><strong>Finnish Sauna</strong><small>Commercial premium, 4-6 person, cedarwood, 85°C</small></td>
+          <td class="c">1</td><td class="gold r">EUR 35,000</td><td class="gold r">EUR 35,000</td>
         </tr>
         <tr>
-          <td><strong>Cold Plunge</strong><small>Commercial grade, chilled to 4-8°C, filtered, stainless</small></td>
-          <td class="c">2</td><td class="gold r">EUR 9,500</td><td class="gold r">EUR 19,000</td>
+          <td><strong>Cold Plunge</strong><small>Commercial grade, chilled to 4-8°C, filtered</small></td>
+          <td class="c">2</td><td class="gold r">EUR 16,500</td><td class="gold r">EUR 33,000</td>
         </tr>
         <tr>
           <td><strong>Sauna + Plunge Installation</strong><small>Plumbing, electrical, drainage, structural reinforcement</small></td>
@@ -472,7 +539,7 @@
           <td class="c">4</td><td class="gold r">EUR 800</td><td class="gold r">EUR 3,200</td>
         </tr>
         <tr>
-          <td><strong>IV Lounge Setup</strong><small>IV trolleys, drip stands, lighting, consumables starter kit</small></td>
+          <td><strong>IV Lounge Setup</strong><small>Trolleys, drip stands, consumables starter kit</small></td>
           <td class="c">--</td><td class="c">--</td><td class="gold r">EUR 2,500</td>
         </tr>
         <tr>
@@ -480,91 +547,134 @@
           <td class="c">--</td><td class="c">--</td><td class="gold r">EUR 4,500</td>
         </tr>
         <tr>
-          <td><strong>Body Composition Scanner</strong><small>InBody 570 or Styku -- full body metrics, muscle/fat/water</small></td>
-          <td class="c">1</td><td class="gold r">EUR 3,500</td><td class="gold r">EUR 3,500</td>
+          <td><strong>InBody 570 Body Composition Scanner</strong><small>Full body metrics -- muscle, fat, water analysis</small></td>
+          <td class="c">1</td><td class="gold r">EUR 5,000</td><td class="gold r">EUR 5,000</td>
         </tr>
         <tr>
-          <td><strong>Compression Therapy Units</strong><small>NormaTec equivalent, full-leg + hip + arm attachments</small></td>
-          <td class="c">2</td><td class="gold r">EUR 2,200</td><td class="gold r">EUR 4,400</td>
+          <td><strong>Abbott Afinion 2</strong><small>Point-of-care analyser, instant blood results</small></td>
+          <td class="c">1</td><td class="gold r">EUR 4,500</td><td class="gold r">EUR 4,500</td>
         </tr>
         <tr>
-          <td><strong>Ozone Generator</strong><small>Medical grade, ozone therapy + sauna ozone integration</small></td>
+          <td><strong>PixCell HemoScreen</strong><small>CBC analyser, complete blood count at point of care</small></td>
+          <td class="c">1</td><td class="gold r">EUR 5,000</td><td class="gold r">EUR 5,000</td>
+        </tr>
+        <tr>
+          <td><strong>ECG + Cardiovascular Kit</strong><small>Resting ECG, cardiovascular screening tools</small></td>
+          <td class="c">1</td><td class="gold r">EUR 1,750</td><td class="gold r">EUR 1,750</td>
+        </tr>
+        <tr>
+          <td><strong>AI Skin Scanner</strong><small>Dermatological analysis, UV damage mapping</small></td>
+          <td class="c">1</td><td class="gold r">EUR 2,000</td><td class="gold r">EUR 2,000</td>
+        </tr>
+        <tr>
+          <td><strong>Compression Therapy (NormaTec)</strong><small>Full-leg + hip attachments</small></td>
+          <td class="c">1</td><td class="gold r">EUR 2,200</td><td class="gold r">EUR 2,200</td>
+        </tr>
+        <tr>
+          <td><strong>Ozone Generator</strong><small>Medical grade, ozone therapy + sauna integration</small></td>
           <td class="c">1</td><td class="gold r">EUR 6,500</td><td class="gold r">EUR 6,500</td>
+        </tr>
+        <tr>
+          <td><strong>Supplement Bar Setup</strong><small>Display, POS, initial stock</small></td>
+          <td class="c">--</td><td class="c">--</td><td class="gold r">EUR 10,000</td>
         </tr>
         <tr>
           <td><strong>Tech Stack -- CRM / App / Booking</strong><small>Member app, booking platform, health data dashboard, POS</small></td>
           <td class="c">--</td><td class="c">--</td><td class="gold r">EUR 8,000</td>
         </tr>
         <tr class="tot hl">
-          <td colspan="3"><strong>Phase 1 Equipment Subtotal</strong></td>
-          <td class="green r"><strong>EUR 92,100</strong></td>
+          <td colspan="3"><strong>Equipment Subtotal</strong></td>
+          <td class="green r"><strong>EUR 140,150</strong></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="fin-label" style="margin-top: 28px;">Phase 2 -- Expansion Equipment (Month 6-12)</div>
-  <p style="font-size:13px; color:var(--text-muted); margin: 4px 0 16px;">Phase 2 is funded from operating cash flow -- not included in the initial investment requirement.</p>
+  <div class="fin-label" style="margin-top: 28px;">Infrastructure</div>
   <div class="table-scroll">
     <table class="fin-table">
       <thead>
-        <tr><th>Item</th><th class="c">Qty</th><th class="r">Unit Cost</th><th class="r">Total</th></tr>
+        <tr><th>Item</th><th class="r">Total</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Hyperbaric Oxygen Chamber (mHBOT)</strong><small>Mild hyperbaric, 1.3 ATA, single-person pod</small></td>
-          <td class="c">1</td><td class="gold r">EUR 55,000</td><td class="gold r">EUR 55,000</td>
+          <td><strong>Interior Fit-Out</strong><small>Warm minimalist -- micro-cement, oak, lighting</small></td>
+          <td class="gold r">EUR 140,000</td>
         </tr>
         <tr>
-          <td><strong>Cold Plunge (3rd Unit)</strong><small>Added to handle increased member volume</small></td>
-          <td class="c">1</td><td class="gold r">EUR 9,500</td><td class="gold r">EUR 9,500</td>
+          <td><strong>Legal Setup + Medical Licensing + Company Formation</strong></td>
+          <td class="gold r">EUR 60,000</td>
         </tr>
         <tr>
-          <td><strong>EMS Suit Training Units</strong><small>Full-body electro-muscle stimulation, supervised sessions</small></td>
-          <td class="c">2</td><td class="gold r">EUR 5,500</td><td class="gold r">EUR 11,000</td>
+          <td><strong>Lease Deposit</strong><small>3 months at EUR 7,500</small></td>
+          <td class="gold r">EUR 22,500</td>
         </tr>
         <tr class="tot hl">
-          <td colspan="3"><strong>Phase 2 Equipment Subtotal</strong></td>
-          <td class="green r"><strong>EUR 75,500</strong></td>
+          <td><strong>Infrastructure Subtotal</strong></td>
+          <td class="green r"><strong>EUR 222,500</strong></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="fin-label" style="margin-top: 28px;">Infrastructure + Legal Setup</div>
-  <div class="capex-grid">
-    <div>
-      <div class="capex-item">
-        <span class="capex-label">Interior Fit-Out (micro-cement, stone, plumbing, premium lighting)</span>
-        <span class="capex-amount">EUR 120,000</span>
-      </div>
-    </div>
-    <div>
-      <div class="capex-item">
-        <span class="capex-label">Legal Setup + Medical Licensing + Company Formation</span>
-        <span class="capex-amount">EUR 60,000</span>
-      </div>
-    </div>
+  <div class="fin-label" style="margin-top: 28px;">6-Month OPEX Buffer</div>
+  <div class="table-scroll">
+    <table class="fin-table">
+      <thead>
+        <tr><th>Item</th><th class="r">Total</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Rent</strong><small>6 months at EUR 7,500</small></td>
+          <td class="gold r">EUR 45,000</td>
+        </tr>
+        <tr>
+          <td><strong>Elateve Management</strong><small>EUR 8,500/mo x 6</small></td>
+          <td class="gold r">EUR 51,000</td>
+        </tr>
+        <tr>
+          <td><strong>Pre-launch Marketing</strong></td>
+          <td class="gold r">EUR 20,000</td>
+        </tr>
+        <tr>
+          <td><strong>Utilities + Insurance + Tech</strong></td>
+          <td class="gold r">EUR 36,000</td>
+        </tr>
+        <tr>
+          <td><strong>Medical Consumables Stock</strong></td>
+          <td class="gold r">EUR 15,000</td>
+        </tr>
+        <tr>
+          <td><strong>Contingency</strong></td>
+          <td class="gold r">EUR 29,350</td>
+        </tr>
+        <tr class="tot hl">
+          <td><strong>OPEX Buffer Subtotal</strong></td>
+          <td class="green r"><strong>EUR 196,350</strong></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
   <div class="capex-total">
     <div>
-      <div class="capex-total-label">Total Launch CAPEX</div>
-      <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Phase 1 equipment (EUR 92,100) + fit-out (EUR 120,000) + legal + licensing (EUR 60,000)</div>
+      <div class="capex-total-label">Total Launch CAPEX + Infrastructure</div>
+      <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Equipment (EUR 140,150) + Infrastructure (EUR 222,500)</div>
     </div>
-    <div class="capex-total-amount">EUR 272,100</div>
+    <div class="capex-total-amount">EUR 362,650</div>
   </div>
   <div class="opex-buffer">
     <div>
       <div class="opex-buffer-label">+ 6-Month OPEX Buffer</div>
     </div>
-    <div class="opex-buffer-amount">EUR 254,900</div>
+    <div class="opex-buffer-amount">EUR 196,350</div>
   </div>
   <div class="total-investment">
     <div>
       <div class="total-investment-label">Total Investment Required</div>
-      <div class="total-investment-sub">To launch Biohacking Studio and fund operations through month 6</div>
+      <div class="total-investment-sub">EUR 600,000 (rounded up from EUR 559k as contingency for Barcelona construction overruns)</div>
     </div>
-    <div class="total-investment-amount">EUR 527,000</div>
+    <div class="total-investment-amount">EUR 600,000</div>
   </div>
 </div>
 
