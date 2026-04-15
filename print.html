@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Biohacking Studio -- Investor Deck (Print)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF7ED;
+    --surface: #FFFFFF;
+    --surface-2: #F2EADA;
+    --border: rgba(140,100,50,0.12);
+    --border-strong: rgba(140,100,50,0.28);
+    --text: #2B2013;
+    --text-soft: #6B5A44;
+    --text-muted: #A09078;
+    --accent: #B8924A;
+    --accent-light: #D4B57E;
+    --accent-dark: #7E5F26;
+    --green: #5F9770;
+    --red: #B94545;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page { size: A4 landscape; margin: 0; }
+
+  html, body {
+    background: #DDD;
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .page {
+    width: 297mm;
+    height: 210mm;
+    background: var(--bg);
+    padding: 14mm 18mm;
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+    margin: 10mm auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page:last-child { page-break-after: auto; }
+
+  @media print {
+    html, body { background: #fff; }
+    .page { margin: 0; box-shadow: none; }
+  }
+
+  /* TYPOGRAPHY */
+  h1, h2, h3, h4 { font-family: 'Inter Tight', sans-serif; letter-spacing: -0.01em; color: var(--text); }
+  h1 { font-size: 56px; font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; }
+  h1 em { font-style: normal; color: var(--accent); }
+  h2 { font-size: 30px; font-weight: 700; line-height: 1.1; }
+  h2 em { font-style: normal; color: var(--accent); font-weight: 700; }
+  h3 { font-size: 16px; font-weight: 600; }
+  h3 em { font-style: normal; color: var(--accent); }
+  h4 { font-size: 13px; font-weight: 700; color: var(--text); }
+  p { font-size: 11px; color: var(--text-soft); line-height: 1.65; }
+  strong { color: var(--text); font-weight: 600; }
+
+  .eyebrow {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--accent);
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 10px;
+  }
+  .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
+
+  .page-num {
+    position: absolute; bottom: 8mm; right: 18mm;
+    font-size: 9px; color: var(--text-muted);
+    letter-spacing: 0.15em;
+  }
+  .page-brand {
+    position: absolute; bottom: 8mm; left: 18mm;
+    font-size: 9px; font-weight: 700; color: var(--accent);
+    letter-spacing: 0.2em; text-transform: uppercase;
+  }
+
+  .page-title {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-title .eyebrow { margin-bottom: 6px; }
+  .page-title h2 { font-size: 26px; }
+
+  /* COVER */
+  .cover {
+    background: linear-gradient(135deg, #F2EADA 0%, #FBF7ED 100%);
+    justify-content: space-between;
+  }
+  .cover-top { display: flex; justify-content: space-between; align-items: start; }
+  .cover-main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .cover h1 { font-size: 96px; }
+  .cover-sub {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 20px; color: var(--accent); font-weight: 400;
+    margin-top: 6px; letter-spacing: 0.02em;
+  }
+  .cover-meta {
+    display: flex; gap: 0; margin-top: 40px;
+    border-top: 1px solid var(--border-strong);
+    padding-top: 24px;
+  }
+  .cover-meta-item {
+    flex: 1;
+    border-right: 1px solid var(--border);
+    padding-right: 20px;
+  }
+  .cover-meta-item:last-child { border-right: none; padding-left: 20px; }
+  .cover-meta-item:not(:first-child) { padding-left: 20px; }
+  .cover-meta-val { font-family: 'Inter Tight', sans-serif; font-size: 26px; font-weight: 700; color: var(--text); }
+  .cover-meta-val em { font-style: normal; color: var(--accent); }
+  .cover-meta-label { font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; margin-top: 4px; }
+  .brand-chip {
+    font-size: 9px; font-weight: 700; color: var(--accent);
+    letter-spacing: 0.25em; text-transform: uppercase;
+  }
+  .doc-meta { font-size: 9px; color: var(--text-muted); text-align: right; letter-spacing: 0.1em; line-height: 1.8; }
+
+  /* GRIDS */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .card h4 { margin-bottom: 6px; color: var(--text); }
+  .card h4 em { font-style: normal; color: var(--accent); }
+  .card p { font-size: 10px; line-height: 1.55; }
+  .card-num {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 22px; font-weight: 800; color: var(--accent);
+    line-height: 1; margin-bottom: 4px;
+  }
+  .card-badge {
+    display: inline-block; background: var(--accent);
+    color: white; font-size: 8px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 3px; margin-bottom: 8px;
+  }
+  .card.featured { background: var(--surface); border: 1px solid var(--border-strong); box-shadow: 0 0 0 4px rgba(184,146,74,0.06); }
+
+  /* STATS ROW */
+  .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-top: 10px; }
+  .stat {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px; text-align: center;
+  }
+  .stat-big {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 26px; font-weight: 800; color: var(--accent); line-height: 1;
+  }
+  .stat-label { font-size: 8px; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 6px; }
+  .stat-sub { font-size: 9px; color: var(--text-soft); margin-top: 4px; }
+
+  /* LIST */
+  .tight-list { list-style: none; padding: 0; margin: 0; }
+  .tight-list li {
+    font-size: 10px; color: var(--text-soft);
+    padding: 5px 0; border-bottom: 1px solid var(--border);
+    position: relative; padding-left: 14px;
+  }
+  .tight-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+  .tight-list li:last-child { border-bottom: none; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; font-size: 10px; }
+  table th {
+    text-align: left; padding: 8px 10px;
+    font-size: 8px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); border-bottom: 1px solid var(--border-strong);
+  }
+  table th.r { text-align: right; }
+  table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-soft);
+    vertical-align: top;
+  }
+  table td.r { text-align: right; font-family: 'Inter Tight', sans-serif; font-weight: 500; }
+  table td.c { text-align: center; }
+  table td.green { color: var(--green); font-weight: 600; }
+  table td.red { color: var(--red); font-weight: 600; }
+  table td.gold { color: var(--accent); font-weight: 600; }
+  table tr.subheader td { background: var(--surface-2); color: var(--accent); font-weight: 700; font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; }
+  table tr.tot td { font-weight: 700; color: var(--text); border-top: 1px solid var(--border-strong); border-bottom: 1px solid var(--border-strong); background: rgba(184,146,74,0.05); }
+  table td small { display: block; font-size: 8px; color: var(--text-muted); margin-top: 2px; }
+
+  /* PHOTOS */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    flex: 1;
+    margin-top: 10px;
+  }
+  .photo-grid > div {
+    background-size: cover; background-position: center;
+    border-radius: 8px; position: relative;
+    border: 1px solid var(--border);
+  }
+  .photo-grid > div:nth-child(1) { grid-row: 1 / 3; }
+  .photo-label {
+    position: absolute; bottom: 10px; left: 10px;
+    background: rgba(42,33,24,0.85); color: white;
+    font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 9px; border-radius: 3px;
+  }
+
+  /* WATERFALL */
+  .waterfall { display: flex; flex-direction: column; gap: 5px; }
+  .waterfall-step {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 14px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .waterfall-step.highlight { background: rgba(184,146,74,0.08); border-color: var(--accent); }
+  .ws-num { width: 22px; height: 22px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
+  .ws-label { font-size: 10px; flex: 1; color: var(--text); font-weight: 500; }
+  .ws-label small { display: block; font-size: 8px; color: var(--text-muted); margin-top: 2px; }
+  .ws-val { font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 11px; }
+  .ws-val.pos { color: var(--green); }
+  .ws-val.neg { color: var(--red); }
+  .ws-val.neu { color: var(--accent); }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--surface-2);
+    border-left: 3px solid var(--accent);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 12px;
+  }
+  .callout-label { font-size: 8px; font-weight: 700; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 4px; }
+  .callout p { font-size: 10px; color: var(--text); }
+
+  /* TIMELINE */
+  .timeline-row { display: flex; gap: 10px; align-items: start; margin-bottom: 8px; }
+  .timeline-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+  }
+  .timeline-content { flex: 1; }
+  .timeline-tag { font-size: 8px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+  .timeline-title { font-size: 11px; font-weight: 600; color: var(--text); margin: 2px 0; }
+  .timeline-desc { font-size: 9px; color: var(--text-soft); line-height: 1.5; }
+
+  /* LEAD PARAGRAPH */
+  .lead {
+    font-size: 12px; line-height: 1.65; color: var(--text-soft);
+    max-width: 720px; margin-bottom: 14px;
+  }
+  .lead strong { color: var(--text); }
+
+  .centered { text-align: center; }
+
+  /* TEAM BLOCK */
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .team-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px;
+  }
+  .team-name { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .team-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; }
+  .team-name h4 { font-size: 13px; margin: 0; }
+  .team-role { font-size: 8px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+  .team-desc { font-size: 9px; color: var(--text-soft); line-height: 1.55; }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ COVER ════════════════════ -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="brand-chip">Biohacking Studio</div>
+    <div class="doc-meta">CONFIDENTIAL<br>Barcelona, 2026<br>Investor Presentation</div>
+  </div>
+  <div class="cover-main">
+    <h1>Biohacking<br><em>Studio</em></h1>
+    <div class="cover-sub">The Future of How You Feel</div>
+    <p style="margin-top: 20px; font-size: 13px; max-width: 520px;">A full-spectrum longevity club &amp; biohacking centre in Jardinets de Gracia, Barcelona. Diagnostic medicine, IV therapy, contrast therapy, hyperbaric oxygen, and a supplement bar -- all under one roof.</p>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="cover-meta-val">~250 <em>sqm</em></div>
+      <div class="cover-meta-label">Jardinets de Gracia</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-val">EUR <em>600k</em></div>
+      <div class="cover-meta-label">Total Investment</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-val">47.6<em>%</em></div>
+      <div class="cover-meta-label">Year 1 ROI</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-val">EUR <em>1.81M</em></div>
+      <div class="cover-meta-label">3-Year Owner Profit</div>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">01</div>
+</div>
+
+<!-- ════════════════════ THE CONCEPT ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part One -- The Concept</div>
+    <h2>The <em>Four Pillars</em></h2>
+  </div>
+  <p class="lead">Not a gym. Not a spa. A medical-wellness social club for people who refuse to guess about their health. Every member begins with blood diagnostics and follows a personalised protocol built around four pillars.</p>
+  <div class="grid-4" style="flex: 1;">
+    <div class="card">
+      <div class="card-num">01</div>
+      <h4>Diagnose</h4>
+      <p>Comprehensive blood panel at entry. Instant on-site results via Abbott Afinion 2, PixCell HemoScreen, and Piccolo Xpress. The hook that separates us from every other wellness club in Europe.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">02</div>
+      <h4>Optimise</h4>
+      <p>IV drip protocols, NAD+ infusions, hyperbaric oxygen, red light therapy, EMS training, compression therapy, and personalised supplement stacks -- prescribed from actual biomarker results, not generic packages.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">03</div>
+      <h4>Recover</h4>
+      <p>Finnish sauna at 85 degrees paired with commercial cold plunges at 4-8 degrees. Full-body red light panels. The contrast protocol proven to reduce systemic inflammation and elevate HRV.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">04</div>
+      <h4>Connect</h4>
+      <p>A club first. The social lounge and monthly events are where Barcelona's high performers, athletes, and biohackers meet each other. Community is the retention engine.</p>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">02</div>
+</div>
+
+<!-- ════════════════════ THE VIBE ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part One -- The Vibe</div>
+    <h2>Step Inside <em>Biohacking Studio</em></h2>
+  </div>
+  <p class="lead">Warm beige walls, natural oak, soft indirect light. A calm, minimalist sanctuary where clinical-grade longevity treatments feel like a five-star spa.</p>
+  <div class="photo-grid">
+    <div style="background-image: url('images/iv-lounge.png');"><div class="photo-label">IV Drip Lounge</div></div>
+    <div style="background-image: url('images/sauna.png');"><div class="photo-label">Sauna &amp; Contrast</div></div>
+    <div style="background-image: url('images/hyperbaric.png');"><div class="photo-label">Hyperbaric Oxygen</div></div>
+    <div style="background-image: url('images/consultation.png');"><div class="photo-label">Medical Consultation</div></div>
+    <div style="background-image: url('images/treatment.png');"><div class="photo-label">Treatment Room</div></div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">03</div>
+</div>
+
+<!-- ════════════════════ THE OPPORTUNITY ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Two -- The Opportunity</div>
+    <h2>Jardinets de Gracia <em>-- Barcelona</em></h2>
+  </div>
+  <p class="lead">~250 sqm in one of Barcelona's most prestigious and strategically connected neighbourhoods. Three reasons this is the right address.</p>
+  <div class="grid-3" style="flex: 1;">
+    <div class="card">
+      <div class="card-num">01</div>
+      <h4>Hotel Proximity</h4>
+      <p>Walking distance from Barcelona's top 5-star hotels -- Mandarin Oriental, Almanac, Majestic, Cotton House, El Palace. These are our referral partners. Being close enough for a concierge to send a guest over in 10 minutes is the difference between a conversion and a "maybe next time."</p>
+    </div>
+    <div class="card">
+      <div class="card-num">02</div>
+      <h4>Expats &amp; High-Profile Locals</h4>
+      <p>The Gracia corridor is home to Barcelona's highest concentration of affluent expat professionals, tech executives from the 22@ district, and established local families. These are people who already spend on wellness, performance, and longevity -- and they live within a 10-minute walk.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">03</div>
+      <h4>Iconic &amp; Timeless</h4>
+      <p>Jardinets de Gracia never goes out of fashion. It sits at the intersection of Eixample elegance and Gracia character -- prestigious without being flashy. The kind of address that gives a brand credibility from day one.</p>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">04</div>
+</div>
+
+<!-- ════════════════════ MEMBERSHIP TIERS ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part One -- Membership</div>
+    <h2>The Three <em>Tiers</em></h2>
+  </div>
+  <p class="lead">Recurring revenue drives the model. Three membership tiers cover the full spectrum -- from entry-level to the serious biohacker. Plus personalised protocols built on diagnostic results.</p>
+  <div class="grid-3" style="flex: 1;">
+    <div class="card">
+      <div class="card-badge">The Seeker</div>
+      <div class="card-num" style="font-size: 30px;">EUR 350<span style="font-size: 11px; color: var(--text-muted); font-weight: 400;">/mo</span></div>
+      <h4 style="margin-top: 10px;">Entry Tier</h4>
+      <p style="margin-top: 6px;">Unlimited contrast therapy, monthly blood panel tracking, 2 IV drips per month, access to the social lounge. For the wellness-curious who want proof.</p>
+      <ul class="tight-list" style="margin-top: 10px;">
+        <li>Unlimited sauna &amp; cold plunge</li>
+        <li>2 IV drips / month (Hydration or Myers)</li>
+        <li>Quarterly blood panel</li>
+        <li>Social lounge access</li>
+      </ul>
+    </div>
+    <div class="card featured">
+      <div class="card-badge">The Vitalist</div>
+      <div class="card-num" style="font-size: 30px;">EUR 550<span style="font-size: 11px; color: var(--text-muted); font-weight: 400;">/mo</span></div>
+      <h4 style="margin-top: 10px;">Flagship Tier</h4>
+      <p style="margin-top: 6px;">The core membership. Unlimited recovery, 4 IV drips per month, full diagnostic suite, compression therapy, and monthly consult with the medical director.</p>
+      <ul class="tight-list" style="margin-top: 10px;">
+        <li>Everything in Seeker</li>
+        <li>4 IV drips / month (any menu item)</li>
+        <li>Monthly hormone + advanced panel</li>
+        <li>Compression + red light unlimited</li>
+        <li>Monthly medical consultation</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-badge">The Architect</div>
+      <div class="card-num" style="font-size: 30px;">EUR 850<span style="font-size: 11px; color: var(--text-muted); font-weight: 400;">/mo</span></div>
+      <h4 style="margin-top: 10px;">Premium Tier</h4>
+      <p style="margin-top: 6px;">For the serious biohacker. Unlimited IV access, NAD+ protocols, peptide therapy, hyperbaric oxygen, and a dedicated health architect who builds your year-long roadmap.</p>
+      <ul class="tight-list" style="margin-top: 10px;">
+        <li>Unlimited IV drips (incl. NAD+)</li>
+        <li>Peptide protocols + HBOT</li>
+        <li>Epigenetic testing</li>
+        <li>Dedicated health architect</li>
+        <li>Year-long longevity roadmap</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="callout-label">Membership Mix -- Year 1 Projection (120 members)</div>
+    <p><strong>60 Seekers</strong> x EUR 350 + <strong>45 Vitalists</strong> x EUR 550 + <strong>15 Architects</strong> x EUR 850 = <strong>EUR 58,500/month MRR</strong> (EUR 702k annual from memberships alone).</p>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">05</div>
+</div>
+
+<!-- ════════════════════ PERSONALISED + SUPPLEMENT BAR ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part One -- Beyond Memberships</div>
+    <h2>Personalised Protocols <em>&amp; the Supplement Bar</em></h2>
+  </div>
+  <div class="grid-2" style="flex: 1;">
+    <div>
+      <h3 style="margin-bottom: 10px;">Personalised <em>Protocols</em></h3>
+      <p style="margin-bottom: 12px;">Beyond the three tiers, members can enter through a fully personalised pathway. The flow: diagnostic → consult → supplement protocol → custom membership built around their data.</p>
+      <div class="timeline-row">
+        <div class="timeline-num">1</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Diagnostic Phase</div>
+          <div class="timeline-desc">Blood panel, hormones, skin analysis, body composition</div>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-num">2</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Results Consultation</div>
+          <div class="timeline-desc">Medical director identifies deficiencies and priorities</div>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-num">3</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Supplement Recommendation</div>
+          <div class="timeline-desc">Personalised protocol from the Supplement Bar</div>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-num">4</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Custom Membership</div>
+          <div class="timeline-desc">Tailored treatments and frequencies -- premium pricing, higher retention</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top: 12px;">
+        <p style="font-size: 10px;">Members who enter through the personalised pathway spend <strong>2-3x more per month</strong> than standard tier members -- and retain longer because their programme is built around their own data.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 10px;">The <em>Supplement Bar</em></h3>
+      <p style="margin-bottom: 12px;">A dedicated station where members receive personalised supplement recommendations based on diagnostic results. Two paths to market.</p>
+      <div class="card" style="margin-bottom: 10px;">
+        <h4>White-Label Own Brand <em>(60-70% margin)</em></h4>
+        <p>Custom-branded Biohacking Studio stacks: <strong>Energy</strong> (NMN, CoQ10, B-complex, Mg), <strong>Recovery</strong> (Omega-3, Creatine, D3+K2, Zn), <strong>Longevity</strong> (NMN, Resveratrol, Ashwagandha, NAC), <strong>Sleep</strong> (Mg Glycinate, L-Theanine, Melatonin). Monthly subscription EUR 65-95.</p>
+      </div>
+      <div class="card">
+        <h4>BE LEVELS Partnership <em>(Spain's premier brand)</em></h4>
+        <p>Partner with Spain's leading premium supplement brand. Lower setup cost, immediate credibility, established supply chain. Revenue share model on all sales through the centre.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">06</div>
+</div>
+
+<!-- ════════════════════ HOTEL REFERRALS ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Three -- Hotel Referrals</div>
+    <h2>The Hotel <em>Referral Network</em></h2>
+  </div>
+  <p class="lead">Biohacking Studio operates as a fully owned standalone centre. Premium hotels become our most powerful customer acquisition channel -- their concierge desks refer guests directly in, and we share the upside on every booking. Commission percentage is negotiated individually with each hotel in the next phase.</p>
+  <div class="grid-4" style="margin-bottom: 14px;">
+    <div class="card centered">
+      <div class="card-num" style="font-size: 28px;">EUR 0</div>
+      <h4>Hotel Investment</h4>
+      <p style="font-size: 9px;">No capital, no operational burden -- just a referral relationship.</p>
+    </div>
+    <div class="card centered">
+      <div class="card-num" style="font-size: 28px;">Per-Visit</div>
+      <h4>Commission Model</h4>
+      <p style="font-size: 9px;">% of referred-guest revenue, tiered by volume.</p>
+    </div>
+    <div class="card centered">
+      <div class="card-num" style="font-size: 28px;">Premium</div>
+      <h4>Guest Upgrade</h4>
+      <p style="font-size: 9px;">Meaningful wellness upgrade without operational complexity.</p>
+    </div>
+    <div class="card centered">
+      <div class="card-num" style="font-size: 28px;">Tracked</div>
+      <h4>Automated Reporting</h4>
+      <p style="font-size: 9px;">Every referral tagged at booking. Monthly statement and payout.</p>
+    </div>
+  </div>
+  <h3 style="margin-bottom: 8px;">Target <em>Partners</em></h3>
+  <div class="grid-3">
+    <div class="card">
+      <h4>5-Star Barcelona Centre</h4>
+      <p>Mandarin Oriental, Soho House, Almanac, Cotton House, Majestic, El Palace -- properties whose guests already pay for wellness and concierge experiences.</p>
+    </div>
+    <div class="card">
+      <h4>Wellness-Forward Resorts</h4>
+      <p>Properties with existing wellness identity lacking a medical-longevity offering. Their guests are pre-qualified for Biohacking Studio.</p>
+    </div>
+    <div class="card">
+      <h4>Boutique &amp; Lifestyle Hotels</h4>
+      <p>Smaller premium hotels that compete on experience. A Biohacking Studio referral is a differentiator their competitors cannot offer.</p>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">07</div>
+</div>
+
+<!-- ════════════════════ THE TEAM ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Four -- Elateve</div>
+    <h2>The Team <em>Behind Biohacking Studio</em></h2>
+  </div>
+  <p class="lead">Elateve is the management company. A compact, high-impact team -- two founders and two specialists, each with a distinct role in building, launching, and running the centre.</p>
+  <div class="team-grid" style="flex: 1;">
+    <div class="team-card">
+      <div class="team-name"><div class="team-avatar">K</div><div><h4>Karen</h4><div class="team-role">Co-Founder -- Strategic &amp; Financial</div></div></div>
+      <p class="team-desc">Strategic architect of Elateve. Financial modelling, investor relations, legal structures, and business development. Background in hospitality and investment.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-name"><div class="team-avatar">M</div><div><h4>Melissa</h4><div class="team-role">Co-Founder -- Operations</div></div></div>
+      <p class="team-desc">The operator. On-site in Barcelona -- negotiating deals, managing suppliers, building hotel relationships. The person making things happen on the ground.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-name"><div class="team-avatar">L</div><div><h4>Lourdes Mateos</h4><div class="team-role">Hotel Partnerships &amp; BD</div></div></div>
+      <p class="team-desc">Leads hotel partnership agreements. Deep knowhow in commission and referral-based business models. Manages relationships, negotiates referral terms, drives the pipeline.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-name"><div class="team-avatar">A</div><div><h4>Anne Claire Dubois</h4><div class="team-role">Admin &amp; Staff Hiring</div></div></div>
+      <p class="team-desc">Specialist in administrative operations and recruitment. Handles medical and front-desk hiring, onboarding, payroll coordination, and compliance.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="callout-label">Elateve Fee Structure</div>
+    <p><strong>EUR 8,500/month base fee</strong> for the Elateve team to manage everything during setup and early operations (premises, fit-out, procurement, hiring, running the centre until it stabilises). Plus <strong>25% of EBITDA</strong> as a performance-aligned fee paid only on profit. The investor keeps <strong>75% of EBITDA</strong> -- middle-point, open to agreement.</p>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">08</div>
+</div>
+
+<!-- ════════════════════ PARTNERS ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Four -- Strategic Partners</div>
+    <h2>Who We <em>Work With</em></h2>
+  </div>
+  <p class="lead">Two confirmed partnership tracks reduce execution risk and plug Biohacking Studio into established Spanish supply chains from day one.</p>
+  <div class="grid-2" style="flex: 1;">
+    <div class="card featured">
+      <div class="card-badge">Supplement Bar</div>
+      <h3 style="margin-bottom: 8px;">BE LEVELS <em>(Spain)</em></h3>
+      <p>Spain's leading premium supplement brand. Gives Biohacking Studio immediate credibility at the Supplement Bar, established fulfilment, and a revenue-share model on all sales. Backup option: white-label our own branded stacks (Energy, Recovery, Longevity, Sleep) at 60-70% margin.</p>
+      <ul class="tight-list" style="margin-top: 12px;">
+        <li>Established supply chain, zero build time</li>
+        <li>Brand credibility with Spanish clients</li>
+        <li>Revenue share on every sale</li>
+        <li>BE LEVELS handles fulfilment; we handle recommendation</li>
+      </ul>
+    </div>
+    <div class="card featured">
+      <div class="card-badge">IV Ingredients</div>
+      <h3 style="margin-bottom: 8px;">AORA HEALTH <em>(Madrid)</em></h3>
+      <p>Madrid-based supplier of medical-grade IV ingredients and longevity compounds (aorahealth.com). Same-country sourcing eliminates customs delays, accelerates restocking, and ensures consistent compound quality for every drip on the menu.</p>
+      <ul class="tight-list" style="margin-top: 12px;">
+        <li>Domestic Spanish supply -- no import delays</li>
+        <li>Pharmaceutical-grade IV ingredients</li>
+        <li>Supports the 12-drip menu + IM shots</li>
+        <li>Ongoing stock replenishment within 48h</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">09</div>
+</div>
+
+<!-- ════════════════════ DIAGNOSTIC TECH ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Four -- Diagnostic Technology</div>
+    <h2>The <em>"Neko Moment"</em> -- Solved</h2>
+  </div>
+  <p class="lead">The wow factor at Neko Health is handing a client their blood results before they leave. We replicate that with three point-of-care analysers inside the diagnostic room. No pneumatic tubes, no external lab -- results in 5 to 12 minutes.</p>
+  <div class="grid-3" style="flex: 1;">
+    <div class="card">
+      <div class="card-badge">EUR 4,500</div>
+      <h3>Abbott <em>Afinion 2</em></h3>
+      <p style="margin-top: 8px;"><strong>What it does:</strong> HbA1c, CRP, lipid panel, albumin in 5-8 minutes from a finger-prick.</p>
+      <p style="margin-top: 6px;"><strong>Why it matters:</strong> CE-IVD certified, Abbott Spain distributor, minimal training needed. The metabolic-inflammation core of the instant blood panel.</p>
+    </div>
+    <div class="card">
+      <div class="card-badge">EUR 5,000</div>
+      <h3>PixCell <em>HemoScreen</em></h3>
+      <p style="margin-top: 8px;"><strong>What it does:</strong> Full CBC (20 parameters + 5-part differential) in 5 minutes, finger-prick or venous.</p>
+      <p style="margin-top: 6px;"><strong>Why it matters:</strong> CE-IVD certified, NHS-approved in the UK, maintenance-free, compact. Covers immunity, anaemia, and infection markers.</p>
+    </div>
+    <div class="card">
+      <div class="card-badge">EUR 6,500</div>
+      <h3>Piccolo <em>Xpress</em></h3>
+      <p style="margin-top: 8px;"><strong>What it does:</strong> 31 chemistry tests in 12 minutes -- liver, kidney, metabolic, lipids, electrolytes, hormonal.</p>
+      <p style="margin-top: 6px;"><strong>Why it matters:</strong> Strongest chemistry panel of the three. Covers hormonal and organ function -- the Advanced Longevity Panel competitors send to external labs.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="callout-label">Combined Capability</div>
+    <p>Together these three machines replicate <strong>~90% of what Neko's blood panel delivers</strong>, in the same 5-12 minute window, without a laboratory. Total diagnostic hardware investment: <strong>EUR 16,000</strong> -- covered inside Phase 1 CAPEX.</p>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">10</div>
+</div>
+
+<!-- ════════════════════ CAPEX ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Five -- Investment</div>
+    <h2>Capital Requirements -- <em>EUR 600,000</em></h2>
+  </div>
+  <div class="grid-2" style="flex: 1;">
+    <div>
+      <h3 style="margin-bottom: 6px;">Phase 1 <em>Equipment</em></h3>
+      <table>
+        <tbody>
+          <tr><td>Finnish Sauna (1 big, commercial)</td><td class="r gold">EUR 35,000</td></tr>
+          <tr><td>Cold Plunges (2 units, 4-8&deg;C)</td><td class="r gold">EUR 33,000</td></tr>
+          <tr><td>Sauna + Plunge Installation</td><td class="r gold">EUR 8,000</td></tr>
+          <tr><td>Red Light Panels (2 units)</td><td class="r gold">EUR 9,000</td></tr>
+          <tr><td>IV Chairs (4) + Lounge Setup</td><td class="r gold">EUR 5,700</td></tr>
+          <tr><td>Diagnostic Room Equipment</td><td class="r gold">EUR 4,500</td></tr>
+          <tr><td>InBody 570 Body Scanner</td><td class="r gold">EUR 5,000</td></tr>
+          <tr><td>Abbott Afinion 2 (blood)</td><td class="r gold">EUR 4,500</td></tr>
+          <tr><td>PixCell HemoScreen (CBC)</td><td class="r gold">EUR 5,000</td></tr>
+          <tr><td>Piccolo Xpress + ECG Kit</td><td class="r gold">EUR 8,250</td></tr>
+          <tr><td>AI Skin Scanner</td><td class="r gold">EUR 2,000</td></tr>
+          <tr><td>Compression (NormaTec)</td><td class="r gold">EUR 2,200</td></tr>
+          <tr><td>Ozone Generator</td><td class="r gold">EUR 6,500</td></tr>
+          <tr><td>Supplement Bar Setup</td><td class="r gold">EUR 10,000</td></tr>
+          <tr><td>Tech Stack (CRM, App, Booking)</td><td class="r gold">EUR 8,000</td></tr>
+          <tr class="tot"><td><strong>Equipment Subtotal</strong></td><td class="r green"><strong>EUR 146,650</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 6px;">Infrastructure <em>&amp; OPEX Buffer</em></h3>
+      <table>
+        <tbody>
+          <tr class="subheader"><td colspan="2">Infrastructure + Legal</td></tr>
+          <tr><td>Interior Fit-Out (warm minimalist)</td><td class="r gold">EUR 140,000</td></tr>
+          <tr><td>Legal Setup + Licensing</td><td class="r gold">EUR 60,000</td></tr>
+          <tr><td>Lease Deposit (3 months)</td><td class="r gold">EUR 22,500</td></tr>
+          <tr class="tot"><td><strong>Infrastructure Subtotal</strong></td><td class="r green"><strong>EUR 222,500</strong></td></tr>
+
+          <tr class="subheader"><td colspan="2">6-Month OPEX Buffer</td></tr>
+          <tr><td>Rent (EUR 7,500/mo)</td><td class="r gold">EUR 45,000</td></tr>
+          <tr><td>Elateve Team Management</td><td class="r gold">EUR 51,000</td></tr>
+          <tr><td>Pre-launch Marketing</td><td class="r gold">EUR 20,000</td></tr>
+          <tr><td>Utilities + Insurance + Tech</td><td class="r gold">EUR 36,000</td></tr>
+          <tr><td>Medical Consumables Stock</td><td class="r gold">EUR 15,000</td></tr>
+          <tr><td>Contingency</td><td class="r gold">EUR 23,000</td></tr>
+          <tr class="tot"><td><strong>OPEX Buffer Subtotal</strong></td><td class="r green"><strong>EUR 190,000</strong></td></tr>
+
+          <tr class="tot" style="background: rgba(184,146,74,0.15);"><td><strong>TOTAL INVESTMENT</strong></td><td class="r" style="color: var(--accent); font-size: 16px;"><strong>EUR 600,000</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">11</div>
+</div>
+
+<!-- ════════════════════ YEAR 1 P&L ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Five -- The Numbers</div>
+    <h2>Year 1 <em>P&amp;L</em></h2>
+  </div>
+  <p class="lead">Conservative Year 1 forecast for the standalone Barcelona centre. 120 members blended across the three tiers, plus walk-in IV, diagnostics, retail, and corporate revenue.</p>
+  <div class="grid-2" style="flex: 1;">
+    <div>
+      <table>
+        <thead><tr><th>Line Item</th><th class="r">Annual (EUR)</th></tr></thead>
+        <tbody>
+          <tr class="subheader"><td colspan="2">Revenue</td></tr>
+          <tr><td><strong>Gross Revenue</strong><small>Memberships 702k + IV 60k + Diagnostics 40k + Retail + Corporate</small></td><td class="r gold">EUR 864,000</td></tr>
+          <tr class="subheader"><td colspan="2">Costs</td></tr>
+          <tr><td>COGS (8%)</td><td class="r red">(EUR 69,120)</td></tr>
+          <tr><td>Rent (EUR 7,500/mo)</td><td class="r red">(EUR 90,000)</td></tr>
+          <tr><td>Staff Payroll (Doctor, Nurse, Recep, Assistant)</td><td class="r red">(EUR 138,000)</td></tr>
+          <tr><td>Elateve Base Fee (EUR 8,500/mo)</td><td class="r red">(EUR 102,000)</td></tr>
+          <tr><td>Local Marketing</td><td class="r red">(EUR 36,000)</td></tr>
+          <tr><td>Tech / Admin / Insurance</td><td class="r red">(EUR 48,000)</td></tr>
+          <tr class="tot"><td><strong>EBITDA</strong></td><td class="r green"><strong>EUR 380,880</strong></td></tr>
+          <tr><td>Elateve Performance (25%)</td><td class="r red">(EUR 95,220)</td></tr>
+          <tr class="tot" style="background: rgba(184,146,74,0.15);"><td><strong>OWNER PROFIT (75%)</strong></td><td class="r" style="color: var(--green); font-size: 14px;"><strong>EUR 285,660</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="stats-row" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="stat"><div class="stat-big">EUR 864k</div><div class="stat-label">Gross Revenue</div></div>
+        <div class="stat"><div class="stat-big">EUR 381k</div><div class="stat-label">EBITDA</div></div>
+        <div class="stat" style="grid-column: 1 / 3; border-color: var(--accent);"><div class="stat-big" style="font-size: 34px;">47.6%</div><div class="stat-label">Year 1 ROI on EUR 600k</div></div>
+      </div>
+      <div class="callout" style="margin-top: 14px;">
+        <div class="callout-label">Membership Mix -- Year 1</div>
+        <p><strong>60 Seekers</strong> x EUR 350 = EUR 21,000/mo<br><strong>45 Vitalists</strong> x EUR 550 = EUR 24,750/mo<br><strong>15 Architects</strong> x EUR 850 = EUR 12,750/mo<br><strong>Total MRR:</strong> EUR 58,500 / <strong>Annual:</strong> EUR 702,000</p>
+      </div>
+      <div class="callout">
+        <div class="callout-label">Key Assumptions</div>
+        <p>Year 1 assumes a 3-month ramp period (50% capacity months 1-3). Comparable Barcelona wellness clubs report 80-120 members within 6 months of opening. All figures pre-tax. Property rent indexed at 4% annual CPI from Year 2.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">12</div>
+</div>
+
+<!-- ════════════════════ 3-YEAR P&L ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Five -- Growth Trajectory</div>
+    <h2>3-Year <em>Projection</em></h2>
+  </div>
+  <p class="lead">Conservative membership growth: <strong>120 -&gt; 180 -&gt; 250 members</strong>. EBITDA split 75% Owner / 25% Elateve (middle-point, open to agreement).</p>
+  <table style="flex: 1;">
+    <thead>
+      <tr><th>Metric</th><th class="r">Year 1</th><th class="r">Year 2</th><th class="r">Year 3</th></tr>
+    </thead>
+    <tbody>
+      <tr class="subheader"><td colspan="4">Revenue</td></tr>
+      <tr><td><strong>Total Gross Revenue</strong></td><td class="r gold">EUR 864,000</td><td class="r gold">EUR 1,320,000</td><td class="r gold">EUR 1,920,000</td></tr>
+      <tr class="subheader"><td colspan="4">Costs</td></tr>
+      <tr><td>COGS (8%)</td><td class="r red">(EUR 69,120)</td><td class="r red">(EUR 105,600)</td><td class="r red">(EUR 153,600)</td></tr>
+      <tr><td>Rent</td><td class="r red">(EUR 90,000)</td><td class="r red">(EUR 93,600)</td><td class="r red">(EUR 97,344)</td></tr>
+      <tr><td>Staff Payroll</td><td class="r red">(EUR 138,000)</td><td class="r red">(EUR 168,000)</td><td class="r red">(EUR 198,000)</td></tr>
+      <tr><td>Elateve Base Fee</td><td class="r red">(EUR 102,000)</td><td class="r red">(EUR 102,000)</td><td class="r red">(EUR 102,000)</td></tr>
+      <tr><td>Local Marketing</td><td class="r red">(EUR 36,000)</td><td class="r red">(EUR 40,000)</td><td class="r red">(EUR 44,000)</td></tr>
+      <tr><td>Tech / Admin / Insurance</td><td class="r red">(EUR 48,000)</td><td class="r red">(EUR 52,000)</td><td class="r red">(EUR 56,000)</td></tr>
+      <tr class="subheader"><td colspan="4">Returns</td></tr>
+      <tr class="tot"><td><strong>EBITDA</strong></td><td class="r green"><strong>EUR 380,880</strong></td><td class="r green"><strong>EUR 758,800</strong></td><td class="r green"><strong>EUR 1,269,056</strong></td></tr>
+      <tr class="tot"><td><strong>Owner Distribution (75%)</strong></td><td class="r green"><strong>EUR 285,660</strong></td><td class="r green"><strong>EUR 569,100</strong></td><td class="r green"><strong>EUR 951,792</strong></td></tr>
+      <tr><td>Elateve Performance (25%)</td><td class="r red">(EUR 95,220)</td><td class="r red">(EUR 189,700)</td><td class="r red">(EUR 317,264)</td></tr>
+      <tr><td><strong>ROI on EUR 600k</strong></td><td class="r gold">47.6%</td><td class="r gold">94.9%</td><td class="r gold">158.6%</td></tr>
+      <tr><td><strong>Cumulative Owner Profit</strong></td><td class="r gold">EUR 285,660</td><td class="r gold">EUR 854,760</td><td class="r gold"><strong>EUR 1,806,552</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-big">EUR 600k</div><div class="stat-label">Total Investment</div></div>
+    <div class="stat"><div class="stat-big">Month 19</div><div class="stat-label">Payback</div></div>
+    <div class="stat"><div class="stat-big">EUR 1.81M</div><div class="stat-label">3-Year Owner Profit</div></div>
+    <div class="stat"><div class="stat-big">47.6%</div><div class="stat-label">Year 1 ROI</div></div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">13</div>
+</div>
+
+<!-- ════════════════════ MANAGEMENT AGREEMENT ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Six -- Management Agreement</div>
+    <h2>The Waterfall -- <em>How EUR 1 Flows</em></h2>
+  </div>
+  <p class="lead">The Owner's entity collects all gross revenues. After operating costs and the Elateve base fee, the remaining EBITDA is split 75% Owner / 25% Elateve. The 75% is a middle-point -- final split is open to agreement.</p>
+  <div class="waterfall" style="flex: 1;">
+    <div class="waterfall-step highlight"><div class="ws-num">1</div><div class="ws-label">Gross Revenue<small>Collected by the Owner's Entity</small></div><div class="ws-val neu">100%</div></div>
+    <div class="waterfall-step"><div class="ws-num">2</div><div class="ws-label">Facility Costs<small>Rent, utilities, taxes</small></div><div class="ws-val neg">- Facility</div></div>
+    <div class="waterfall-step"><div class="ws-num">3</div><div class="ws-label">Operating Expenses<small>Staff payroll, medical supplies, marketing</small></div><div class="ws-val neg">- OPEX</div></div>
+    <div class="waterfall-step"><div class="ws-num">4</div><div class="ws-label">Elateve Base Fee<small>EUR 8,500/month -- setup, hiring, fit-out, procurement, early ops. Open to renegotiation once stabilised.</small></div><div class="ws-val neg">- EUR 8.5k/mo</div></div>
+    <div class="waterfall-step highlight"><div class="ws-num">5</div><div class="ws-label">= EBITDA<small>What remains after all costs and the Elateve base fee</small></div><div class="ws-val pos">= EBITDA</div></div>
+    <div class="waterfall-step highlight"><div class="ws-num">6</div><div class="ws-label">Owner Distribution<small>75% of EBITDA -- projected middle-point, open to agreement</small></div><div class="ws-val pos">75%</div></div>
+    <div class="waterfall-step"><div class="ws-num">7</div><div class="ws-label">Elateve Performance Fee<small>25% of EBITDA -- performance-aligned, paid only on profit</small></div><div class="ws-val neg">25%</div></div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">14</div>
+</div>
+
+<!-- ════════════════════ MSA TERMS ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Six -- Agreement Terms</div>
+    <h2>IP, Term <em>&amp; Termination</em></h2>
+  </div>
+  <div class="grid-3" style="flex: 1;">
+    <div class="card">
+      <h4>Appointment <em>&amp; Term</em></h4>
+      <p style="margin-top: 6px;">Owner engages Elateve exclusively to develop, launch, and operate the Biohacking Studio Longevity Centre in Jardinets de Gracia. <strong>Initial term: 5 years</strong> from Grand Opening. Automatic 5-year renewal unless terminated with 6 months' written notice.</p>
+    </div>
+    <div class="card">
+      <h4>Owner <em>Obligations</em></h4>
+      <p style="margin-top: 6px;">Secures and holds the commercial lease. Provides 100% of CAPEX (fit-out, equipment, deposits) and initial working capital. Retains ownership of all physical assets (furniture, biohacking machinery, fixtures).</p>
+    </div>
+    <div class="card">
+      <h4>Elateve <em>Obligations</em></h4>
+      <p style="margin-top: 6px;">Full project management (design, construction, procurement). Daily operations, hiring, medical compliance. Strategy and growth including membership sales, marketing via the Elateve app, and brand ecosystem management.</p>
+    </div>
+    <div class="card">
+      <h4>Manager <em>IP</em></h4>
+      <p style="margin-top: 6px;">All IP -- including the Biohacking Studio name, "4 Pillars" methodology, customer databases, proprietary software, and operational manuals -- remains 100% exclusive property of Elateve.</p>
+    </div>
+    <div class="card">
+      <h4>Licensing <em>&amp; Franchise</em></h4>
+      <p style="margin-top: 6px;">Owner is granted a revocable, non-transferable license to use the IP strictly for this specific Barcelona location. Elateve reserves the absolute right to franchise or license the concept globally.</p>
+    </div>
+    <div class="card">
+      <h4>Termination <em>&amp; Performance</em></h4>
+      <p style="margin-top: 6px;">Either party may terminate for material breach, insolvency, or loss of medical licenses. Owner may terminate if Elateve fails to achieve 80% of EBITDA targets for two consecutive years after a 12-month ramp. On termination, Owner retains the lease and equipment; Biohacking Studio branding removed within 30 days.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="callout-label">Turnkey High-Yield Asset</div>
+    <p>The investor provides the body -- building and equipment. Elateve provides the soul -- brand, customers, and expertise. The result: a professionally managed longevity centre participating in one of the fastest-growing markets in the world, with zero operational burden on the investor.</p>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">15</div>
+</div>
+
+<!-- ════════════════════ THE PITCH - BRAND ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Seven -- The Pitch</div>
+    <h2>Brand <em>&amp; IP Ownership</em></h2>
+  </div>
+  <p class="lead">The physical centre generates revenue. But the real scalable value sits in the brand, the methodology, and the repeatable system. This is what turns a single location into a platform.</p>
+  <div class="grid-3" style="flex: 1;">
+    <div class="card">
+      <h4>The Biohacking Studio <em>Brand</em></h4>
+      <p style="margin-top: 8px;">The name, visual identity, and market positioning. This is what guests recognise, what hotels partner with, and what scales to new cities. Owned 100% by Elateve.</p>
+    </div>
+    <div class="card">
+      <h4>The Diagnostic-Led <em>Model</em></h4>
+      <p style="margin-top: 8px;">The "4 Pillars" methodology, the diagnostic-first approach, and the personalised protocol system. This is the intellectual property that differentiates us from every spa and wellness centre.</p>
+    </div>
+    <div class="card">
+      <h4>The Repeatable <em>System</em></h4>
+      <p style="margin-top: 8px;">The operating manual, the member app, supplier relationships, and the medical compliance framework. Everything needed to replicate this centre in Madrid, London, Dubai, or any premium city.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="callout-label">The Anchor Point</div>
+    <p>The investor is funding and owning the asset. The brand and platform have broader expansion potential that belongs to the concept creator. This distinction is critical for long-term value creation for both parties.</p>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">16</div>
+</div>
+
+<!-- ════════════════════ THE PITCH - TALENT + HOTEL STRATEGY ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Seven -- Talent &amp; Hotel Strategy</div>
+    <h2>Building a <em>Scalable Team</em></h2>
+  </div>
+  <div class="grid-2" style="flex: 1;">
+    <div>
+      <h3 style="margin-bottom: 8px;">Talent <em>&amp; Incentives</em></h3>
+      <p style="margin-bottom: 10px;">This model depends heavily on quality staff and member experience. Team structure includes performance-based incentives that attract and retain top talent.</p>
+      <div class="card" style="margin-bottom: 8px;">
+        <h4>Medical Director</h4>
+        <p style="font-size: 9px;">Clinical anchor. Base salary + bonus tied to member retention and clinical outcomes.</p>
+      </div>
+      <div class="card" style="margin-bottom: 8px;">
+        <h4>Operations Lead</h4>
+        <p style="font-size: 9px;">Runs day-to-day. Eligible for phantom shares / profit-sharing that vests over time.</p>
+      </div>
+      <div class="card">
+        <h4>Growth &amp; Membership</h4>
+        <p style="font-size: 9px;">Commission-based compensation tied to sign-ups and hotel referral revenue. Fully aligned with investor returns.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 8px;">Hotel <em>Strategy</em></h3>
+      <p style="margin-bottom: 10px;">Compelling opportunity to position Biohacking Studio alongside premium hotels -- not as dependency, but as strategic partnership that accelerates growth.</p>
+      <h4 style="margin-bottom: 6px;">The Upside</h4>
+      <ul class="tight-list" style="margin-bottom: 10px;">
+        <li>Immediate access to high-value clients</li>
+        <li>Lower customer acquisition cost</li>
+        <li>Strong alignment with "longevity retreat" positioning</li>
+        <li>Win-win revenue share</li>
+      </ul>
+      <h4 style="margin-bottom: 6px;">The Boundaries</h4>
+      <ul class="tight-list">
+        <li>Strategic partnership, not full dependency</li>
+        <li>We retain full control of brand identity</li>
+        <li>We maintain direct member relationships</li>
+        <li>Centre operates independently regardless of hotel volume</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">17</div>
+</div>
+
+<!-- ════════════════════ 180-DAY TIMELINE ════════════════════ -->
+<div class="page">
+  <div class="page-title">
+    <div class="eyebrow">Part Seven -- The Plan</div>
+    <h2>The First <em>180 Days</em></h2>
+  </div>
+  <p class="lead">From signed agreement to ribbon cutting. A clear, phased roadmap showing the investor exactly what happens, when, and why.</p>
+  <div style="flex: 1;">
+    <div class="timeline-row">
+      <div class="timeline-num">0</div>
+      <div class="timeline-content">
+        <div class="timeline-tag">Pre-Work (Completed)</div>
+        <div class="timeline-title">Concept development, business plan, and full P&amp;L model</div>
+        <div class="timeline-desc">Strategic foundation already built. Brand identity, service pricing, membership tiers, financial projections, and management agreement framework all in place.</div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-num">1</div>
+      <div class="timeline-content">
+        <div class="timeline-tag">Days 1-30 -- Lease &amp; Design</div>
+        <div class="timeline-title">Secure Barcelona premises and finalise architectural plans</div>
+        <div class="timeline-desc">Target: ~250 sqm in Jardinets de Gracia. Finalise the "warm minimalist" interior. Sign the lease and begin permitting.</div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-num">2</div>
+      <div class="timeline-content">
+        <div class="timeline-tag">Days 31-90 -- Build &amp; Procure</div>
+        <div class="timeline-title">Construction, equipment ordering, supplier contracts</div>
+        <div class="timeline-desc">Build-out of sauna, cold plunges, IV lounge, treatment rooms, and consultation space. Procurement of all biohacking equipment and tech stack.</div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-num">3</div>
+      <div class="timeline-content">
+        <div class="timeline-tag">Days 60-120 -- Digital Warm-Up</div>
+        <div class="timeline-title">Launch web/app, begin local membership pre-sales</div>
+        <div class="timeline-desc">Founding-member discount, targeted social media in Barcelona's premium wellness and fitness communities. Start building the waitlist.</div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-num">4</div>
+      <div class="timeline-content">
+        <div class="timeline-tag">Days 120-150 -- Team &amp; Training</div>
+        <div class="timeline-title">Hire Medical Director, nurses, and front-desk team</div>
+        <div class="timeline-desc">Recruit and onboard the core team. Run intensive training on operating procedures, member experience standards, and clinical protocols.</div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <div class="timeline-num">5</div>
+      <div class="timeline-content">
+        <div class="timeline-tag">Day 180 -- Grand Opening</div>
+        <div class="timeline-title">Ribbon cutting -- first cohort of 120 members initiated</div>
+        <div class="timeline-desc">Doors open. First 120 founding members begin diagnostic journeys. Hotel referral partnerships go live.</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-brand">Biohacking Studio -- Barcelona</div>
+  <div class="page-num">18</div>
+</div>
+
+<!-- ════════════════════ GRAND SUMMARY ════════════════════ -->
+<div class="page" style="background: linear-gradient(135deg, #F2EADA 0%, #FBF7ED 100%);">
+  <div class="page-title">
+    <div class="eyebrow">The One-Page View</div>
+    <h2>Grand <em>Summary</em></h2>
+  </div>
+  <p class="lead">Biohacking Studio is a medical-grade longevity centre in Jardinets de Gracia, Barcelona (~250 sqm). Members enter through diagnostic bloodwork with instant on-site results, receive a personalised protocol, and access IV drips, contrast therapy, red light, compression, and a Supplement Bar -- all under one roof. Premium hotels refer guests in on commission. Elateve runs operations. Year 1 projects EUR 380k EBITDA on EUR 864k revenue, with 75% flowing to the investor.</p>
+
+  <div class="stats-row" style="margin-bottom: 14px;">
+    <div class="stat"><div class="stat-big">EUR 600k</div><div class="stat-label">Total Capital</div><div class="stat-sub">Equipment, fit-out, legal, 6-mo buffer</div></div>
+    <div class="stat"><div class="stat-big">75%</div><div class="stat-label">Of Net Profit</div><div class="stat-sub">Middle-point, open to agreement</div></div>
+    <div class="stat"><div class="stat-big">47.6%</div><div class="stat-label">Year 1 ROI</div><div class="stat-sub">Payback Month 19 -- inside Year 2</div></div>
+    <div class="stat"><div class="stat-big">EUR 1.81M</div><div class="stat-label">3-Year Owner Profit</div><div class="stat-sub">Cumulative after Elateve's 25%</div></div>
+  </div>
+
+  <div class="grid-3" style="flex: 1;">
+    <div class="card">
+      <h4>Supplement Partner</h4>
+      <p style="margin-top: 6px;"><strong>BE LEVELS (Spain)</strong> -- Spain's leading premium supplement brand. Established fulfilment, credibility, and a revenue-share model.</p>
+    </div>
+    <div class="card">
+      <h4>IV Ingredients Partner</h4>
+      <p style="margin-top: 6px;"><strong>AORA HEALTH (Madrid)</strong> -- Medical-grade IV compounds, same-country sourcing, 48h restocking.</p>
+    </div>
+    <div class="card">
+      <h4>Diagnostic Tech</h4>
+      <p style="margin-top: 6px;"><strong>Abbott Afinion 2, PixCell HemoScreen, Piccolo Xpress</strong> -- three point-of-care analysers deliver ~90% of Neko's blood panel, on-site, in 5-12 minutes.</p>
+    </div>
+    <div class="card">
+      <h4>Why EUR 600k</h4>
+      <p style="margin-top: 6px;">Gold-plated build was EUR 641k (AHA 2.0 ATA HBOT + all three analysers). EUR 600k is the balanced mid-point with EUR 13k contingency.</p>
+    </div>
+    <div class="card">
+      <h4>Staff Coverage</h4>
+      <p style="margin-top: 6px;">6-month buffer covers the full team (EUR 18k/mo all-in). Payroll self-funds at ~40 members (reached in 2-3 months). By month 6, payroll is 31% of revenue.</p>
+    </div>
+    <div class="card">
+      <h4>Legal Breakdown</h4>
+      <p style="margin-top: 6px;">EUR 60k splits into: lawyers + company (EUR 24k), AEMPS + sanitary permits (EUR 18k), activity licence (EUR 18k). Full transparency.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 12px; background: var(--surface); border-left-color: var(--accent);">
+    <div class="callout-label">One-Line Pitch</div>
+    <p style="font-size: 13px;"><strong>Turnkey longevity centre. Zero operational burden.</strong> EUR 600k. 250 sqm in Jardinets de Gracia. 75% of profit to the investor. Operated by Elateve. Supplied by BE LEVELS and AORA HEALTH. Diagnostics by Abbott, PixCell, and Piccolo. Payback inside Year 2.</p>
+  </div>
+
+  <div class="page-brand">Biohacking Studio -- Barcelona -- 2026</div>
+  <div class="page-num">19 / 19</div>
+</div>
+
+</body>
+</html>
